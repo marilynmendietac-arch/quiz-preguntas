@@ -1,0 +1,2402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Servicio al Ciudadano</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .question-container {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .question-text {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .option {
+            margin-bottom: 10px;
+        }
+        .option input {
+            margin-right: 10px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: none;
+        }
+        .correct {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #f2f2f2;
+        }
+        .correct-answer {
+            color: #27ae60;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cuestionario de Servicio al Ciudadano</h1>
+        
+        <div id="question-1" class="question-container">
+            <div class="question-number">Pregunta 1</div>
+            <div class="question-text">Usted labora en una entidad científica la cual está comprometida con el respeto por las diferencias, usted como encargado/a de uno de los proyectos de educación, está llevando a cabo una feria de ciencias, teniendo en cuenta una serie de requisitos que los participantes deben cumplir, además la persona encargada de redactar la información decide incorporar la condición de que todos los participantes deben ser de nacionalidad colombiana; días después alguien se acerca a usted para reclamarle por limitación de la cual usted tenía conocimiento. Ante la situación descrita usted decide</div>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" id="q1a" name="question1" value="A">
+                    <label for="q1a">A. llamar la atención a la persona encargada de informar las condiciones recordándole las pautas de participación iniciales.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q1b" name="question1" value="B">
+                    <label for="q1b">B. dialogar con el funcionario/a sobre el respeto por las diferencias para que gestione el cambio de esa condición y que la feria sea incluyente.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q1c" name="question1" value="C">
+                    <label for="q1c">C. conversar con el funcionario/a sobre los valores corporativos que debe tener en cuenta para desempeñar su labor.</label>
+                </div>
+            </div>
+            <div class="feedback" id="feedback1" style="display: none;">
+                <span class="correct-answer">Respuesta correcta: B</span><br>
+                La respuesta correcta es: dialogar con el funcionario/a sobre el respeto por las diferencias para que gestione el cambio de esa condición y que la feria sea incluyente.
+            </div>
+        </div>
+        
+        <div id="question-2" class="question-container">
+            <div class="question-number">Pregunta 2</div>
+            <div class="question-text">En el departamento en el que usted se desempeña, se ha identificado la constante presencia de adultos mayores sin acompañante solicitando servicios de la entidad que deben realizarse por medio del portal web. Por este motivo, se ha convocado a una reunión prioritaria pues se evidencia la dificultad de esta población para realizar los trámites de forma independiente causándoles molestia. Su jefe le pide dar una solución. En este caso usted propone</div>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" id="q2a" name="question2" value="A">
+                    <label for="q2a">A. habilitar un servicio de gestión guiada donde un funcionario brinde el acompañamiento de los usuarios que lo requieran, para que realicen sus trámites directamente en la entidad y así dar solución oportuna a sus necesidades.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q2b" name="question2" value="B">
+                    <label for="q2b">B. realizar un vídeo tutorial para los adultos mayores en el que se le explique cómo hacer los trámites a través del portal institucional, que se pasará por lo televisores de la sala de espera, así brinda herramientas de autogestión los ciudadanos.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q2c" name="question2" value="C">
+                    <label for="q2c">C. generar un componente educativo donde se capacite a los usuarios de forma grupal en el funcionamiento del portal web y los trámites que se realizan por ese medio, de esta forma facilitar el acceso de los ciudadanos al servicio.</label>
+                </div>
+            </div>
+            <div class="feedback" id="feedback2" style="display: none;">
+                <span class="correct-answer">Respuesta correcta: A</span><br>
+                La respuesta correcta es: habilitar un servicio de gestión guiada donde un funcionario brinde el acompañamiento de los usuarios que lo requieran, para que realicen sus trámites directamente en la entidad y así dar solución oportuna a sus necesidades.
+            </div>
+        </div>
+        
+        <div id="question-3" class="question-container">
+            <div class="question-number">Pregunta 3</div>
+            <div class="question-text">Un usuario se encuentra alterado porque llevaba mucho tiempo a la espera y solicita ser atendido por otro funcionario, alegando que no le gusta la atención que usted le ha brindado hasta el momento y que ha visto que las personas se demoran más en su cubículo que en los demás. En este caso usted</div>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" id="q3a" name="question3" value="A">
+                    <label for="q3a">A. le explica al ciudadano que los trámites que realizó antes de atenderlo se solucionaron en el tiempo estipulado para los mismos, inicia el trámite solicitándole la información pertinente para avanzar en su solicitud mientras su compañero puede tomar el caso.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q3b" name="question3" value="B">
+                    <label for="q3b">B. permite que el ciudadano le comente los motivos de su molestia y a su vez indaga acerca de la solicitud, solicitándole que le permita atender la diligencia con agilidad mientras le escucha, mitigando su molestia por la demora y así brindarle un buen servicio además de una solución oportuna a su problemática.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q3c" name="question3" value="C">
+                    <label for="q3c">C. dialoga con el ciudadano ofreciéndole disculpas y le solicita a uno de sus compañeros que le brinde la atención para darle tranquilidad al ciudadano y poder brindarle una atención oportuna a sus necesidades.</label>
+                </div>
+            </div>
+            <div class="feedback" id="feedback3" style="display: none;">
+                <span class="correct-answer">Respuesta correcta: B</span><br>
+                La respuesta correcta es: permite que el ciudadano le comente los motivos de su molestia y a su vez indaga acerca de la solicitud, solicitándole que le permita atender la diligencia con agilidad mientras le escucha, mitigando su molestia por la demora y así brindarle un buen servicio además de una solución oportuna a su problemática.
+            </div>
+        </div>
+        
+        <div id="question-4" class="question-container">
+            <div class="question-number">Pregunta 4</div>
+            <div class="question-text">Una ciudadana quiere información para instaurar un derecho de petición para que la entidad brinde soluciones a la comunidad de su barrio, pues se han visto afectados por la acumulación de basuras que no se recoge desde hace varios días, y esto ha atraído a animales y malos olores que ponen en riesgo la salubridad de las personas. En este caso usted</div>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" id="q4a" name="question4" value="A">
+                    <label for="q4a">A. explica a la ciudadana la forma en la que debe escribir el derecho de petición y la información que es necesario poner en ella, escribiendo en una hoja para que pueda realizarlo desde su casa, asegurando que pueda hacerlo correctamente.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q4b" name="question4" value="B">
+                    <label for="q4b">B. tramita la solicitud de la ciudadana y le genera un derecho de petición con la información que ella aporta, para darle el número de radicado de su tramite y así solucionar su necesidad oportunamente.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q4c" name="question4" value="C">
+                    <label for="q4c">C. explica a la ciudadana que en la pagina web de la entidad hay un instructivo con el paso a paso de cómo realizar un derecho de petición, para que ella se guíe y pueda presentar correctamente su solicitud.</label>
+                </div>
+            </div>
+            <div class="feedback" id="feedback4" style="display: none;">
+                <span class="correct-answer">Respuesta correcta: A</span><br>
+                En el caso una ciudadana pide información para instaurar un derecho de petición sobre un punto de acumulación de basuras en su comunidad. En este caso la respuesta correcta es en la que se le explica la forma en la que debe escribir el derecho de petición y la información que es necesario poner en ella, escribiendo en una hoja dicha información; pues de esta forma usted está asegurando que la ciudadana pueda realizar su trámite, basada en su explicación, escribir la información en una hoja es además de un gesto de amabilidad una herramienta para favorecer la comprensión de la ciudadana, lo cual demuestra que verdaderamente se preocupa por dar solución a su necesidad y dejar una imagen buena no solo de la entidad sino también de su servicio.
+            </div>
+        </div>
+        
+        <div id="question-5" class="question-container">
+            <div class="question-number">Pregunta 5</div>
+            <div class="question-text">Usted labora como funcionario/a en una entidad y debe realizar el pago de nómina correspondiente para lo cual requiere que su asistente le reporte las horas de trabajo de cada uno de los empleados/as del lugar, pero su auxiliar cuenta con alto flujo de trabajo ese día, por lo que usted decide no contar con su ayuda; al día siguiente usted recibe un correo electrónico en el cual uno de los empleados exige un pago apropiado y se percata de que no estaba enterado que debía remunerarle las horas extra laboradas. Ante la situación descrita usted decide</div>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" id="q5a" name="question5" value="A">
+                    <label for="q5a">A. buscar a su asistente para ofrecerle una disculpa por la carga laboral y manifestar que requiere de su ayuda.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q5b" name="question5" value="B">
+                    <label for="q5b">B. responder al empleado/a que le reporte cuántas horas extra laboro y pagarle al día siguiente.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q5c" name="question5" value="C">
+                    <label for="q5c">C. contestar al empleado/a que la próxima quincena recibirá su pago completo y solicitar a su asistente que tenga en cuenta tal pago.</label>
+                </div>
+            </div>
+            <div class="feedback" id="feedback5" style="display: none;">
+                <span class="correct-answer">Respuesta correcta: A</span><br>
+                La opción de buscar al asistente para disculparse por la carga laboral y buscar su ayuda es correcta porque este funcionario/a es quien lleva de manera adecuada la cuenta de horas extra y novedades presentadas con el personal, por lo cual el evaluado/a requiere de la información que este le brinde para realizar los pagos oportunos a los colaboradores de la entidad; además, ofrecer una disculpa es importante porque permite acercarse al asistente para verificar que tan excesivo es su trabajo para reevaluar las funciones asignadas; con lo anterior, se evidencia que el evaluado/a percibe la importancia de llevar a cabo una labor colaborativa de manera conjunta con las demás personas para obtener resultados favorables en las funciones laborales.
+            </div>
+        </div>
+        
+        <div id="question-6" class="question-container">
+            <div class="question-number">Pregunta 6</div>
+            <div class="question-text">Una ciudadana se acerca a la oficina de correspondencia, solicitando interponer una queja por la mala atención de un funcionario, por lo tanto, otro funcionario le aclara que en esta dependencia no puede realizar este trámite, sin embargo, la ciudadana se encuentra alterada por lo cual habla con voz y expresión corporal fuerte. Para brindar la atención correcta a la ciudadana el funcionario debe</div>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" id="q6a" name="question6" value="A">
+                    <label for="q6a">A. prestar atención a los argumentos y pormenores de la situación siendo empático, una vez le haya contado todos los detales explicarle que debe radicar la queja en la oficina de atención al ciudadano.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q6b" name="question6" value="B">
+                    <label for="q6b">B. comunicarse con atención al usuario para informar acerca de la situación de la ciudadana, para tranquilizarla y a la vez agilizar la atención de su reclamación de forma oportuna.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q6c" name="question6" value="C">
+                    <label for="q6c">C. escucharla prestando atención a sus argumentos y demostrar que comprende su malestar, una vez se haya tranquilizado explicarle que debe acercarse a la oficina de atención al ciudadano para radicar la queja.</label>
+                </div>
+            </div>
+            <div class="feedback" id="feedback6" style="display: none;">
+                <span class="correct-answer">Respuesta correcta: C</span><br>
+                La respuesta correcta es: escucharla prestando atención a sus argumentos y demostrar que comprende su malestar, una vez se haya tranquilizado explicarle que debe acercarse a la oficina de atención al ciudadano para radicar la queja.
+            </div>
+        </div>
+        
+        <div id="question-7" class="question-container">
+            <div class="question-number">Pregunta 7</div>
+            <div class="question-text">Usted se desempeña en una entidad como encargado/a de un proyecto social donde se brindan cursos de actividades recreativas a jóvenes y existe gran cantidad de personas interesadas en estos pero tienen muchas dudas frente a los requisitos que deben cumplir para su participación y rápidamente se generan rumores confusos. Ante la situación descrita usted decide</div>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" id="q7a" name="question7" value="A">
+                    <label for="q7a">A. publicar un comunicado en el cual se respondan todas las inquietudes de las personas.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q7b" name="question7" value="B">
+                    <label for="q7b">B. confirmar la veracidad de los rumores confusos para poder iniciar con la participación.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q7c" name="question7" value="C">
+                    <label for="q7c">C. gestionar una reunión informativa con los interesados/as para aclarar las inquietudes.</label>
+                </div>
+            </div>
+            <div class="feedback" id="feedback7" style="display: none;">
+                <span class="correct-answer">Respuesta correcta: C</span><br>
+                La respuesta correcta es: gestionar una reunión informativa con los interesados/as para aclarar las inquietudes.
+            </div>
+        </div>
+        
+        <div id="question-8" class="question-container">
+            <div class="question-number">Pregunta 8</div>
+            <div class="question-text">Usted labora en el área administrativa de una nueva entidad de salud que debe establecer los puntos de atención a los usuarios/as más adecuados y su jefe le indica que usted debe proponer una estrategia de obtención de la información necesaria para realizar la asignación del lugar de atención donde los usuarios/as deben asistir a sus diligencias médicas. Ante la situación descrita usted decide</div>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" id="q8a" name="question8" value="A">
+                    <label for="q8a">A. gestionar para cada usuario/a el punto de atención más cercano a su vivienda desde una plataforma tecnológica de ubicación.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q8b" name="question8" value="B">
+                    <label for="q8b">B. contratar a una empresa encargada de realizar estudios con gran cantidad de datos de manera que se obtengan resultados favorables.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q8c" name="question8" value="C">
+                    <label for="q8c">C. contactar a los usuarios/as para consultarles cual punto de atención es de su preferencia.</label>
+                </div>
+            </div>
+            <div class="feedback" id="feedback8" style="display: none;">
+                <span class="correct-answer">Respuesta correcta: A</span><br>
+                La respuesta correcta es: gestionar para cada usuario/a el punto de atención más cercano a su vivienda desde una plataforma tecnológica de ubicación.
+            </div>
+        </div>
+        
+        <div id="question-9" class="question-container">
+            <div class="question-number">Pregunta 9</div>
+            <div class="question-text">En el departamento de correspondencia, los funcionarios en ventanilla están teniendo dificultades con la comunicación con los usuarios, porque el intercomunicador que está en el vidrio que los separa se encuentra averiado y no les permite comunicarse bien. Para mitigar el problema el funcionario</div>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" id="q9a" name="question9" value="A">
+                    <label for="q9a">A. habla asegurándose que el ciudadano le escuche a través del vidrio, enmarcando su lenguaje en el respeto y la empatía necesarios, permitiendo que el ciudadano haga lo mismo y así poder establecer un canal de comunicación efectivo.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q9b" name="question9" value="B">
+                    <label for="q9b">B. crea un formato que los ciudadanos diligencien con las opciones que brinda su servicio y los datos básicos que se requieren para tramitar las solicitudes. Disminuyendo la comunicación verbal para generar un canal de comunicación más efectivo y oportuno a la hora de brindar la atención.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q9c" name="question9" value="C">
+                    <label for="q9c">C. genera una serie de carteles que pega en la ventanilla indicando que el intercomunicador está averiado y que es necesario hablar más fuerte para poder establecer comunicación, disculpándose por la molestia que esto pueda generar en el ciudadano.</label>
+                </div>
+            </div>
+            <div class="feedback" id="feedback9" style="display: none;">
+                <span class="correct-answer">Respuesta correcta: B</span><br>
+                Esta situación plantea que la comunicación entre los usuarios y el intercomunicador que está en el vidrio que los separa se encuentra averiado por lo cual el funcionario debe manejar la situación para poder brindar una adecuada atención. La respuesta correcta es la que el funcionario crea un formato que los ciudadanos diligencien con las opciones que brinda su servicio y los datos básicos que se requieren para tramitar las solicitudes. Disminuyendo la comunicación verbal para generar un canal de comunicación más efectivo y oportuno a la hora de brindar la atención; ya que está demostrando su capacidad para establecer mecanismos de comunicación con los ciudadanos, esta respuesta demuestra además habilidad para adaptarse a diferentes situaciones, todas estas capacidades y habilidades mencionadas son las necesarias para un funcionario público.
+            </div>
+        </div>
+        
+        <div id="question-10" class="question-container">
+            <div class="question-number">Pregunta 10</div>
+            <div class="question-text">Usted labora en una entidad financiera donde se encarga de notificar a los clientes deudores sus próximas fechas de pago límite para que sus propiedades no sean embargadas y se olvida de realizar una importante llamada telefónica a una persona que, de no realizar el pago correspondiente ese mismo día, será desalojada al siguiente. Tras lo sucedido, el cliente asiste a la entidad y se muestra muy alterado, comentando que no fue informado de su situación moratoria. Ante la situación descrita usted decide</div>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" id="q10a" name="question10" value="A">
+                    <label for="q10a">A. ofrecer al cliente una disculpa y reportar a su jefe lo sucedido para gestionar una nueva fecha de pago.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q10b" name="question10" value="B">
+                    <label for="q10b">B. explicar al cliente el procedimiento que realiza la entidad ante el no pago y que puede realizar un proceso de queja si lo desea.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="q10c" name="question10" value="C">
+                    <label for="q10c">C. tranquilizar al cliente y decirle que debe investigar lo sucedido para aclarar la situación.</label>
+                </div>
+            </div>
+            <div class="feedback" id="feedback10" style="display: none;">
+                <span class="correct-answer">Respuesta correcta: A</span><br>
+                La respuesta correcta es: ofrecer al cliente una disculpa y reportar a su jefe lo sucedido para gestionar una nueva fecha de pago.
+            </div>
+        </div>
+
+<div id="question-11" class="question-container">
+    <div class="question-number">Pregunta 11</div>
+    <div class="question-text">Como funcionario de servicio al ciudadano, usted ha recibido la invitación para realizar una capacitación presencial acerca de estrategias de comunicación, en la que se tratarán específicamente temas de manejo a personas molestas, comunicación no verbal y manejo de público, sin embargo, la capacitación es fuera de la entidad y dentro del horario de trabajo, por lo que requiere de autorización por recursos humanos con el permiso del jefe inmediato quien se encuentra de viaje atendiendo solicitudes de la entidad. Con el fin de tomar la capacitación, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q11a" name="question11" value="A">
+            <label for="q11a">A. envía un correo electrónico al jefe inmediato, para solicitar el permiso y la autorización, así lo comunique a recursos humanos y usted puede asistir a la capacitación.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q11b" name="question11" value="B">
+            <label for="q11b">B. se comunica telefónicamente con el jefe inmediato, comentándole la situación para que este le dé el permiso y envíe autorización a través de correo electrónico, posteriormente la radica en recursos humanos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q11c" name="question11" value="C">
+            <label for="q11c">C. hace el proceso directamente con recursos humanos, enviando la solicitud de autorización, con el fin de tramitarla evitando no interrumpir al jefe, asistir a la capacitación.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback11" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: se comunica telefónicamente con el jefe inmediato, comentándole la situación para que este le dé el permiso y envíe autorización a través de correo electrónico, posteriormente la radica en recursos humanos.
+    </div>
+</div>
+
+<div id="question-12" class="question-container">
+    <div class="question-number">Pregunta 12</div>
+    <div class="question-text">Usted trabaja como funcionario en una entidad donde día a día se atiende un gran número de usuarios, y el día de hoy hay una gran demanda debido a un nuevo proceso que se comenzó a implementar de manera presencial; por tanto, su jefe le pide a toda su área de trabajo apoyar al equipo de atención al usuario dado que los usuarios se muestran molestos y alterados por las demoras. En este sentido, y teniendo en cuenta que usted nunca ha apoyado esta área y no conoce los procedimientos que se siguen, decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q12a" name="question12" value="A">
+            <label for="q12a">A. brindar el acompañamiento requerido buscando otorgar su ayuda en tareas que faciliten una mayor organización para mejorar la prestación del servicio.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q12b" name="question12" value="B">
+            <label for="q12b">B. solicitarle a su jefe que le permita inicialmente instruirse sobre los procesos del área para brindar la ayuda solicitada con base en conocimientos sólidos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q12c" name="question12" value="C">
+            <label for="q12c">C. asistir al área que presenta la dificultad atendiendo a las personas que presenten mayores inconvenientes para trasladar sus solicitudes con celeridad.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback12" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: brindar el acompañamiento requerido buscando otorgar su ayuda en tareas que faciliten una mayor organización para mejorar la prestación del servicio.
+    </div>
+</div>
+
+<div id="question-13" class="question-container">
+    <div class="question-number">Pregunta 13</div>
+    <div class="question-text">La entidad ha enviado a un grupo de funcionarios a un evento donde las entidades hospitalarias públicas exponen sus buenas prácticas, entre el grupo hay un funcionario que se encarga de los servicios de humanización en la entidad hospitalaria. Dentro del evento se presentan los líderes de la política de humanización de servicios y las actualizaciones de la misma, estos refieren que ya están disponibles las actualizaciones de la política, por lo que realizaran a las entidades con el fin de afianzar las adaptaciones a la norma lo más pronto posible. En este caso, con el fin realizar la adaptación correspondiente, el funcionario de los servicios de humanización</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q13a" name="question13" value="A">
+            <label for="q13a">A. dialoga con los líderes de la política con el fin de conseguir una asesoría o capacitación donde le aclaren los aspectos que debe adaptar teniendo en cuenta las particularidades de la entidad.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q13b" name="question13" value="B">
+            <label for="q13b">B. identifica los aspectos de importancia dentro de la política, teniendo en cuanta la actualización y genera el cronograma para la adaptación.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q13c" name="question13" value="C">
+            <label for="q13c">C. hace una comparación de la política que maneja en la actualidad con la nueva política, para determinar cuáles son los cambios necesarios que debe hacer y así adaptar los procesos.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback13" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: dialoga con los líderes de la política con el fin de conseguir una asesoría o capacitación donde le aclaren los aspectos que debe adaptar teniendo en cuenta las particularidades de la entidad.
+    </div>
+</div>
+
+<div id="question-14" class="question-container">
+    <div class="question-number">Pregunta 14</div>
+    <div class="question-text">Usted trabaja en una entidad como parte de un equipo que, junto a otros dos equipos similares, tienen asignada la función de revisar la documentación de los empleados por áreas para planear los procesos de capacitación. No obstante, uno de los otros equipos presenta un gran atraso con respecto al cronograma de capacitaciones propuesto al inicio del año, el cual debe cumplirse a cabalidad para la auditoría que se llevará a cabo en dos semanas. El líder general del área le solicita a su equipo pensar de qué manera pueden apoyar a los compañeros que se encuentran atrasados para dar cumplimiento al cronograma establecido, teniendo que cuenta que su equipo debe cumplir igualmente con sus propios procesos de acuerdo a las fechas establecidas. Ante esta solicitud, usted considera que debe proceder</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q14a" name="question14" value="A">
+            <label for="q14a">A. suspendiendo los procesos que aún no se han llevado a cabo de forma tal que todos los empleados se encuentren nivelados y puedan quedar al día a nivel de formación.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q14b" name="question14" value="B">
+            <label for="q14b">B. ocupándose de manera grupal de los procesos que se encuentran retrasados para dejarlos al día y nivelados rápidamente, y después enfocarse en los faltantes.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q14c" name="question14" value="C">
+            <label for="q14c">C. centrándose primero en terminar las responsabilidades de su equipo para no retrasar el cumplimiento oportuno, y posteriormente apoyar a los demás en los faltantes.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback14" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: ocupándose de manera grupal de los procesos que se encuentran retrasados para dejarlos al día y nivelados rápidamente, y después enfocarse en los faltantes.
+    </div>
+</div>
+
+<div id="question-15" class="question-container">
+    <div class="question-number">Pregunta 15</div>
+    <div class="question-text">La entidad desarrolla una estrategia educativa para los ciudadanos que estén interesados en conocer el funcionamiento de la página web para realizar trámites en línea. El desarrollo de esta estrategia plantea que los ciudadanos interesados deben tener un computador para cada uno, con el fin de que sigan los pasos que el capacitador indica y así familiarizarse con el portal y los procesos que desean conocer. A la última capacitación ha llegado un grupo de adultos mayores, a los que se les dificulta el manejo de herramientas ofimáticas. En esta situación, para poder desarrollar la capacitación de forma que favorezca la comprensión de los adultos mayores, el capacitador</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q15a" name="question15" value="A">
+            <label for="q15a">A. desarrolla la capacitación haciendo rondas por el espacio, para verificar que todos sigan adecuadamente los pasos y resolver las dudas que estos puedan tener y asegurar el aprendizaje.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q15b" name="question15" value="B">
+            <label for="q15b">B. brinda la capacitación de forma pausada y explica que también pueden utilizar otros canales de atención para realizar sus trámites de forma que sea más fácil para ellos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q15c" name="question15" value="C">
+            <label for="q15c">C. dirige la capacitación apoyándose en ejemplos cotidianos relacionados con los procesos, para que puedan identificar lo que necesitan comprender y se enfoquen en ello.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback15" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: desarrolla la capacitación haciendo rondas por el espacio, para verificar que todos sigan adecuadamente los pasos y resolver las dudas que estos puedan tener y asegurar el aprendizaje.
+    </div>
+</div>
+
+<div id="question-16" class="question-container">
+    <div class="question-number">Pregunta 16</div>
+    <div class="question-text">En el departamento de bienestar ha ingresado un nuevo líder de equipo quien promueve estrategias de intervención a los funcionarios de la entidad basadas en el control y el manejo emocional de una forma más práctica que teórica, lo cual es innovador para el departamento ya que actualmente solo se desarrollan intervenciones de tipo capacitación en donde se les habla acerca del control y manejo emocional sin realizar actividades de ningún tipo. Por esta situación, el líder le pide a un funcionario del departamento que realice cambios en las intervenciones que realice relacionadas con estas temáticas en donde promueva la participación activa de los funcionarios para garantizar su aprendizaje. Con el fin de cumplir con la solicitud del nuevo líder, el funcionario</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q16a" name="question16" value="A">
+            <label for="q16a">A. genera una nueva propuesta de trabajo centrada en actividades como juegos de roles, donde promueva el control y el manejo emocional en los funcionarios.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q16b" name="question16" value="B">
+            <label for="q16b">B. reescribe los protocolos de las intervenciones que realiza con el fin de enfocarlas a actividades de tipo práctico y así adaptarse al enfoque del nuevo líder.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q16c" name="question16" value="C">
+            <label for="q16c">C. desarrolla las intervenciones con actividades lúdicas que promuevan el control y manejo emocional, haciéndolas de forma práctica y divertida.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback16" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: desarrolla las intervenciones con actividades lúdicas que promuevan el control y manejo emocional, haciéndolas de forma práctica y divertida.
+    </div>
+</div>
+
+<div id="question-17" class="question-container">
+    <div class="question-number">Pregunta 17</div>
+    <div class="question-text">La entidad ha enviado a un grupo de funcionarios a un evento donde las entidades hospitalarias públicas exponen sus buenas prácticas, entre el grupo hay un funcionario que se encarga de los servicios de humanización en la entidad hospitalaria. Dentro del evento se presentan los líderes de la política de humanización de servicios y las actualizaciones de la misma, estos refieren que ya están disponibles las actualizaciones de la política, por lo que realizaran a las entidades con el fin de afianzar las adaptaciones a la norma lo más pronto posible. En este caso, con el fin realizar la adaptación correspondiente, el funcionario de los servicios de humanización</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q17a" name="question17" value="A">
+            <label for="q17a">A. dialoga con los líderes de la política con el fin de conseguir una asesoría o capacitación donde le aclaren los aspectos que debe adaptar teniendo en cuenta las particularidades de la entidad.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q17b" name="question17" value="B">
+            <label for="q17b">B. identifica los aspectos de importancia dentro de la política, teniendo en cuanta la actualización y genera el cronograma para la adaptación.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q17c" name="question17" value="C">
+            <label for="q17c">C. hace una comparación de la política que maneja en la actualidad con la nueva política, para determinar cuáles son los cambios necesarios que debe hacer y así adaptar los procesos.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback17" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: dialoga con los líderes de la política con el fin de conseguir una asesoría o capacitación donde le aclaren los aspectos que debe adaptar teniendo en cuenta las particularidades de la entidad.
+    </div>
+</div>
+
+<div id="question-18" class="question-container">
+    <div class="question-number">Pregunta 18</div>
+    <div class="question-text">La entidad ha implementado un nuevo proceso para solicitar el préstamo de las salas de capacitación, con el cual pretende evitar que se entrecrucen los eventos programados y todos se puedan desarrollar de forma adecuada, en el momento en que han sido estipulados. En este nuevo proceso quién requiera de las salas de capacitación debe diligenciar el formulario de solicitud de la sala y de cada elemento que vaya a utilizar, como tablero, computador, proyector, entre otros. Este proceso incrementa la cantidad de trabajo para los funcionarios del departamento de capacitación al ciudadano, quienes deben diligenciar los formatos por cada capacitación que realicen en el día. Con el fin de fomentar la adecuada implementación del proceso y adaptación el equipo, el líder de capacitación al ciudadano</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q18a" name="question18" value="A">
+            <label for="q18a">A. organiza una reunión donde explica el paso a paso para diligenciar los formatos, aclara las dudas e invita a todo su equipo de trabajo a apropiarse del proceso con el fin de hacerlo más simple.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q18b" name="question18" value="B">
+            <label for="q18b">B. adquiere una cantidad considerable de fotocopias de cada formato, buscando suplir la necesidad y evitar que sus funcionarios tengan problemáticas con la escases de los formatos a diligenciar.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q18c" name="question18" value="C">
+            <label for="q18c">C. reúne al equipo y les comenta acerca de la importancia que tiene el nuevo proceso para la entidad, con el fin de promover la implementación correcta del proceso en su departamento.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback18" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: organiza una reunión donde explica el paso a paso para diligenciar los formatos, aclara las dudas e invita a todo su equipo de trabajo a apropiarse del proceso con el fin de hacerlo más simple.
+    </div>
+</div>
+
+<div id="question-19" class="question-container">
+    <div class="question-number">Pregunta 19</div>
+    <div class="question-text">En el último semestre se han generado nuevas políticas públicas relacionadas con la inclusión a poblaciones diversas, estas políticas se relacionan de forma directa con el trabajo que desarrolla el departamento en el que usted desempeña sus funciones, por lo cual es esencial comprenderlas, manejarlas y adaptar los procesos que se desarrollan de acuerdo a ellas; por esto la entidad establece un ciclo de capacitación online, con duración de ciento ochenta horas, con el fin de promover la adaptación adecuada a las políticas. Para asegurar el desarrollo, la capacitación y la adaptación de los procesos a las políticas, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q19a" name="question19" value="A">
+            <label for="q19a">A. organiza su horario y establece metas diarias tanto para la capacitación como para la adaptación de los procesos según la política y obtener los resultados esperados.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q19b" name="question19" value="B">
+            <label for="q19b">B. estipula dentro de su cronograma de trabajo los días en los que desarrollará la capacitación, e inicio de procesos de adaptación y así cumplir con los objetivos propuestos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q19c" name="question19" value="C">
+            <label for="q19c">C. inicia la capacitación buscando los aspectos que afectan directamente el desempeño de sus funciones, en cada política, así comprender lo necesario y desarrollar la actualización.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback19" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: organiza su horario y establece metas diarias tanto para la capacitación como para la adaptación de los procesos según la política y obtener los resultados esperados.
+    </div>
+</div>
+
+<div id="question-20" class="question-container">
+    <div class="question-number">Pregunta 20</div>
+    <div class="question-text">En la entidad donde usted trabaja, su jefe le ha realizado recientemente la asignación de un equipo de trabajo con el objetivo de implementar un nuevo proyecto al interior de la entidad, solicitándole realizar el plan de trabajo inicial en un plazo de una semana para dar inicio al mismo. Dado que el nuevo proyecto a implementar incorpora procesos que son hasta ahora desconocidos para usted, propondría como primer punto del plan de trabajo</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q20a" name="question20" value="A">
+            <label for="q20a">A. gestionar un proceso de capacitación grupal con el fin de conocer los nuevos lineamientos a desarrollar.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q20b" name="question20" value="B">
+            <label for="q20b">B. realizar una reunión con el equipo directivo para conocer los objetivos y metas esperadas sobre la propuesta.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q20c" name="question20" value="C">
+            <label for="q20c">C. seleccionar líderes dentro del grupo que realicen una indagación exhaustiva sobre el plan a realizar.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback20" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: gestionar un proceso de capacitación grupal con el fin de conocer los nuevos lineamientos a desarrollar.
+    </div>
+</div>
+
+
+<!-- inicio -->
+<div id="question-21" class="question-container">
+    <div class="question-number">Pregunta 21</div>
+    <div class="question-text">Como funcionario de servicio al ciudadano, usted ha recibido la invitación para realizar una capacitación presencial acerca de estrategias de comunicación, en la que se tratarán específicamente temas de manejo a personas molestas, comunicación no verbal y manejo de público, sin embargo, la capacitación es fuera de la entidad y dentro del horario de trabajo, por lo que requiere de autorización por recursos humanos con el permiso del jefe inmediato quien se encuentra de viaje atendiendo solicitudes de la entidad. Con el fin de tomar la capacitación, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q21a" name="question21" value="A">
+            <label for="q21a">A. envía un correo electrónico al jefe inmediato, para solicitar el permiso y la autorización, así lo comunique a recursos humanos y usted puede asistir a la capacitación.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q21b" name="question21" value="B">
+            <label for="q21b">B. se comunica telefónicamente con el jefe inmediato, comentándole la situación para que este le dé el permiso y envíe autorización a través de correo electrónico, posteriormente la radica en recursos humanos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q21c" name="question21" value="C">
+            <label for="q21c">C. hace el proceso directamente con recursos humanos, enviando la solicitud de autorización, con el fin de tramitarla evitando no interrumpir al jefe, asistir a la capacitación.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback21" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: se comunica telefónicamente con el jefe inmediato, comentándole la situación para que este le dé el permiso y envíe autorización a través de correo electrónico, posteriormente la radica en recursos humanos.
+    </div>
+</div>
+
+<div id="question-22" class="question-container">
+    <div class="question-number">Pregunta 22</div>
+    <div class="question-text">Usted trabaja como funcionario en una entidad donde día a día se atiende un gran número de usuarios, y el día de hoy hay una gran demanda debido a un nuevo proceso que se comenzó a implementar de manera presencial; por tanto, su jefe le pide a toda su área de trabajo apoyar al equipo de atención al usuario dado que los usuarios se muestran molestos y alterados por las demoras. En este sentido, y teniendo en cuenta que usted nunca ha apoyado esta área y no conoce los procedimientos que se siguen, decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q22a" name="question22" value="A">
+            <label for="q22a">A. brindar el acompañamiento requerido buscando otorgar su ayuda en tareas que faciliten una mayor organización para mejorar la prestación del servicio.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q22b" name="question22" value="B">
+            <label for="q22b">B. solicitarle a su jefe que le permita inicialmente instruirse sobre los procesos del área para brindar la ayuda solicitada con base en conocimientos sólidos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q22c" name="question22" value="C">
+            <label for="q22c">C. asistir al área que presenta la dificultad atendiendo a las personas que presenten mayores inconvenientes para trasladar sus solicitudes con celeridad.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback22" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: brindar el acompañamiento requerido buscando otorgar su ayuda en tareas que faciliten una mayor organización para mejorar la prestación del servicio.
+    </div>
+</div>
+
+<div id="question-23" class="question-container">
+    <div class="question-number">Pregunta 23</div>
+    <div class="question-text">La entidad ha enviado a un grupo de funcionarios a un evento donde las entidades hospitalarias públicas exponen sus buenas prácticas, entre el grupo hay un funcionario que se encarga de los servicios de humanización en la entidad hospitalaria. Dentro del evento se presentan los líderes de la política de humanización de servicios y las actualizaciones de la misma, estos refieren que ya están disponibles las actualizaciones de la política, por lo que realizaran a las entidades con el fin de afianzar las adaptaciones a la norma lo más pronto posible. En este caso, con el fin realizar la adaptación correspondiente, el funcionario de los servicios de humanización</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q23a" name="question23" value="A">
+            <label for="q23a">A. dialoga con los líderes de la política con el fin de conseguir una asesoría o capacitación donde le aclaren los aspectos que debe adaptar teniendo en cuenta las particularidades de la entidad.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q23b" name="question23" value="B">
+            <label for="q23b">B. identifica los aspectos de importancia dentro de la política, teniendo en cuanta la actualización y genera el cronograma para la adaptación.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q23c" name="question23" value="C">
+            <label for="q23c">C. hace una comparación de la política que maneja en la actualidad con la nueva política, para determinar cuáles son los cambios necesarios que debe hacer y así adaptar los procesos.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback23" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: dialoga con los líderes de la política con el fin de conseguir una asesoría o capacitación donde le aclaren los aspectos que debe adaptar teniendo en cuenta las particularidades de la entidad.
+    </div>
+</div>
+
+<div id="question-24" class="question-container">
+    <div class="question-number">Pregunta 24</div>
+    <div class="question-text">Usted trabaja en una entidad como parte de un equipo que, junto a otros dos equipos similares, tienen asignada la función de revisar la documentación de los empleados por áreas para planear los procesos de capacitación. No obstante, uno de los otros equipos presenta un gran atraso con respecto al cronograma de capacitaciones propuesto al inicio del año, el cual debe cumplirse a cabalidad para la auditoría que se llevará a cabo en dos semanas. El líder general del área le solicita a su equipo pensar de qué manera pueden apoyar a los compañeros que se encuentran atrasados para dar cumplimiento al cronograma establecido, teniendo que cuenta que su equipo debe cumplir igualmente con sus propios procesos de acuerdo a las fechas establecidas. Ante esta solicitud, usted considera que debe proceder</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q24a" name="question24" value="A">
+            <label for="q24a">A. suspendiendo los procesos que aún no se han llevado a cabo de forma tal que todos los empleados se encuentren nivelados y puedan quedar al día a nivel de formación.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q24b" name="question24" value="B">
+            <label for="q24b">B. ocupándose de manera grupal de los procesos que se encuentran retrasados para dejarlos al día y nivelados rápidamente, y después enfocarse en los faltantes.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q24c" name="question24" value="C">
+            <label for="q24c">C. centrándose primero en terminar las responsabilidades de su equipo para no retrasar el cumplimiento oportuno, y posteriormente apoyar a los demás en los faltantes.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback24" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: ocupándose de manera grupal de los procesos que se encuentran retrasados para dejarlos al día y nivelados rápidamente, y después enfocarse en los faltantes.
+    </div>
+</div>
+
+<div id="question-25" class="question-container">
+    <div class="question-number">Pregunta 25</div>
+    <div class="question-text">La entidad desarrolla una estrategia educativa para los ciudadanos que estén interesados en conocer el funcionamiento de la página web para realizar trámites en línea. El desarrollo de esta estrategia plantea que los ciudadanos interesados deben tener un computador para cada uno, con el fin de que sigan los pasos que el capacitador indica y así familiarizarse con el portal y los procesos que desean conocer. A la última capacitación ha llegado un grupo de adultos mayores, a los que se les dificulta el manejo de herramientas ofimáticas. En esta situación, para poder desarrollar la capacitación de forma que favorezca la comprensión de los adultos mayores, el capacitador</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q25a" name="question25" value="A">
+            <label for="q25a">A. desarrolla la capacitación haciendo rondas por el espacio, para verificar que todos sigan adecuadamente los pasos y resolver las dudas que estos puedan tener y asegurar el aprendizaje.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q25b" name="question25" value="B">
+            <label for="q25b">B. brinda la capacitación de forma pausada y explica que también pueden utilizar otros canales de atención para realizar sus trámites de forma que sea más fácil para ellos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q25c" name="question25" value="C">
+            <label for="q25c">C. dirige la capacitación apoyándose en ejemplos cotidianos relacionados con los procesos, para que puedan identificar lo que necesitan comprender y se enfoquen en ello.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback25" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: desarrolla la capacitación haciendo rondas por el espacio, para verificar que todos sigan adecuadamente los pasos y resolver las dudas que estos puedan tener y asegurar el aprendizaje.
+    </div>
+</div>
+
+<div id="question-26" class="question-container">
+    <div class="question-number">Pregunta 26</div>
+    <div class="question-text">En el departamento de bienestar ha ingresado un nuevo líder de equipo quien promueve estrategias de intervención a los funcionarios de la entidad basadas en el control y el manejo emocional de una forma más práctica que teórica, lo cual es innovador para el departamento ya que actualmente solo se desarrollan intervenciones de tipo capacitación en donde se les habla acerca del control y manejo emocional sin realizar actividades de ningún tipo. Por esta situación, el líder le pide a un funcionario del departamento que realice cambios en las intervenciones que realice relacionadas con estas temáticas en donde promueva la participación activa de los funcionarios para garantizar su aprendizaje. Con el fin de cumplir con la solicitud del nuevo líder, el funcionario</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q26a" name="question26" value="A">
+            <label for="q26a">A. genera una nueva propuesta de trabajo centrada en actividades como juegos de roles, donde promueva el control y el manejo emocional en los funcionarios.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q26b" name="question26" value="B">
+            <label for="q26b">B. reescribe los protocolos de las intervenciones que realiza con el fin de enfocarlas a actividades de tipo práctico y así adaptarse al enfoque del nuevo líder.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q26c" name="question26" value="C">
+            <label for="q26c">C. desarrolla las intervenciones con actividades lúdicas que promuevan el control y manejo emocional, haciéndolas de forma práctica y divertida.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback26" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: desarrolla las intervenciones con actividades lúdicas que promuevan el control y manejo emocional, haciéndolas de forma práctica y divertida.
+    </div>
+</div>
+
+<div id="question-27" class="question-container">
+    <div class="question-number">Pregunta 27</div>
+    <div class="question-text">Durante el año en curso se han implementado una serie de talleres dirigidos a niños, niñas y adolescentes, enfocados a la aceptación y autoestima, con el fin de promover una sexualidad responsable. Sin embargo, la entidad le comunica a usted como líder del proceso que existe nueva normatividad para el manejo de información acerca de la sexualidad en esta población, motivo por el cual le solicita cumplir con dicha normatividad y adaptar los procesos del departamento a ésta, así evitar inconvenientes y cumplir con los objetivos de calidad con la organización. Con el fin de adaptar adecuadamente los procesos basado en el aprendizaje de la nueva normatividad, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q27a" name="question27" value="A">
+            <label for="q27a">A. utiliza la nueva normatividad como protocolo a seguir antes de iniciar cualquier proceso nuevo dentro del departamento, así aplica la norma adecuadamente.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q27b" name="question27" value="B">
+            <label for="q27b">B. adquiere la normatividad y actualiza los procesos conforme se vaya avanzando en ellos para no detenerlos, favoreciendo a la población y a la entidad.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q27c" name="question27" value="C">
+            <label for="q27c">C. busca y adquiere la normatividad, con el fin de identificar en ella los aspectos de importancia que afectan los procesos y con base en ellos realizar la adaptación correspondiente.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback27" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: busca y adquiere la normatividad, con el fin de identificar en ella los aspectos de importancia que afectan los procesos y con base en ellos realizar la adaptación correspondiente.
+    </div>
+</div>
+
+<div id="question-28" class="question-container">
+    <div class="question-number">Pregunta 28</div>
+    <div class="question-text">La entidad ha implementado un nuevo proceso para solicitar el préstamo de las salas de capacitación, con el cual pretende evitar que se entrecrucen los eventos programados y todos se puedan desarrollar de forma adecuada, en el momento en que han sido estipulados. En este nuevo proceso quién requiera de las salas de capacitación debe diligenciar el formulario de solicitud de la sala y de cada elemento que vaya a utilizar, como tablero, computador, proyector, entre otros. Este proceso incrementa la cantidad de trabajo para los funcionarios del departamento de capacitación al ciudadano, quienes deben diligenciar los formatos por cada capacitación que realicen en el día. Con el fin de fomentar la adecuada implementación del proceso y adaptación el equipo, el líder de capacitación al ciudadano</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q28a" name="question28" value="A">
+            <label for="q28a">A. organiza una reunión donde explica el paso a paso para diligenciar los formatos, aclara las dudas e invita a todo su equipo de trabajo a apropiarse del proceso con el fin de hacerlo más simple.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q28b" name="question28" value="B">
+            <label for="q28b">B. adquiere una cantidad considerable de fotocopias de cada formato, buscando suplir la necesidad y evitar que sus funcionarios tengan problemáticas con la escases de los formatos a diligenciar.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q28c" name="question28" value="C">
+            <label for="q28c">C. reúne al equipo y les comenta acerca de la importancia que tiene el nuevo proceso para la entidad, con el fin de promover la implementación correcta del proceso en su departamento.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback28" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: organiza una reunión donde explica el paso a paso para diligenciar los formatos, aclara las dudas e invita a todo su equipo de trabajo a apropiarse del proceso con el fin de hacerlo más simple.
+    </div>
+</div>
+
+<div id="question-29" class="question-container">
+    <div class="question-number">Pregunta 29</div>
+    <div class="question-text">En el último semestre se han generado nuevas políticas públicas relacionadas con la inclusión a poblaciones diversas, estas políticas se relacionan de forma directa con el trabajo que desarrolla el departamento en el que usted desempeña sus funciones, por lo cual es esencial comprenderlas, manejarlas y adaptar los procesos que se desarrollan de acuerdo a ellas; por esto la entidad establece un ciclo de capacitación online, con duración de ciento ochenta horas, con el fin de promover la adaptación adecuada a las políticas. Para asegurar el desarrollo, la capacitación y la adaptación de los procesos a las políticas, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q29a" name="question29" value="A">
+            <label for="q29a">A. organiza su horario y establece metas diarias tanto para la capacitación como para la adaptación de los procesos según la política y obtener los resultados esperados.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q29b" name="question29" value="B">
+            <label for="q29b">B. estipula dentro de su cronograma de trabajo los días en los que desarrollará la capacitación, e inicio de procesos de adaptación y así cumplir con los objetivos propuestos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q29c" name="question29" value="C">
+            <label for="q29c">C. inicia la capacitación buscando los aspectos que afectan directamente el desempeño de sus funciones, en cada política, así comprender lo necesario y desarrollar la actualización.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback29" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: organiza su horario y establece metas diarias tanto para la capacitación como para la adaptación de los procesos según la política y obtener los resultados esperados.
+    </div>
+</div>
+
+<div id="question-30" class="question-container">
+    <div class="question-number">Pregunta 30</div>
+    <div class="question-text">En la entidad donde usted trabaja, su jefe le ha realizado recientemente la asignación de un equipo de trabajo con el objetivo de implementar un nuevo proyecto al interior de la entidad, solicitándole realizar el plan de trabajo inicial en un plazo de una semana para dar inicio al mismo. Dado que el nuevo proyecto a implementar incorpora procesos que son hasta ahora desconocidos para usted, propondría como primer punto del plan de trabajo</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q30a" name="question30" value="A">
+            <label for="q30a">A. gestionar un proceso de capacitación grupal con el fin de conocer los nuevos lineamientos a desarrollar.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q30b" name="question30" value="B">
+            <label for="q30b">B. realizar una reunión con el equipo directivo para conocer los objetivos y metas esperadas sobre la propuesta.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q30c" name="question30" value="C">
+            <label for="q30c">C. seleccionar líderes dentro del grupo que realicen una indagación exhaustiva sobre el plan a realizar.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback30" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: gestionar un proceso de capacitación grupal con el fin de conocer los nuevos lineamientos a desarrollar.
+    </div>
+</div>
+<!-- fin -->
+        
+<!-- inicio -->
+<div id="question-31" class="question-container">
+    <div class="question-number">Pregunta 31</div>
+    <div class="question-text">Usted labora en una entidad científica la cual está comprometida con el respeto por las diferencias, usted como encargado/a de uno de los proyectos de educación, está llevando a cabo una feria de ciencias, teniendo en cuenta una serie de requisitos que los participantes deben cumplir, además la persona encargada de redactar la información decide incorporar la condición de que todos los participantes deben ser de nacionalidad colombiana; días después alguien se acerca a usted para reclamarle por limitación de la cual usted tenía conocimiento. Ante la situación descrita usted decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q31a" name="question31" value="A">
+            <label for="q31a">A. llamar la atención a la persona encargada de informar las condiciones recordándole las pautas de participación iniciales.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q31b" name="question31" value="B">
+            <label for="q31b">B. dialogar con el funcionario/a sobre el respeto por las diferencias para que gestione el cambio de esa condición y que la feria sea incluyente.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q31c" name="question31" value="C">
+            <label for="q31c">C. conversar con el funcionario/a sobre los valores corporativos que debe tener en cuenta para desempeñar su labor.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback31" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: dialogar con el funcionario/a sobre el respeto por las diferencias para que gestione el cambio de esa condición y que la feria sea incluyente.
+    </div>
+</div>
+
+<div id="question-32" class="question-container">
+    <div class="question-number">Pregunta 32</div>
+    <div class="question-text">En el departamento en el que usted se desempeña, se ha identificado la constante presencia de adultos mayores sin acompañante solicitando servicios de la entidad que deben realizarse por medio del portal web. Por este motivo, se ha convocado a una reunión prioritaria pues se evidencia la dificultad de esta población para realizar los trámites de forma independiente causándoles molestia. Su jefe le pide dar una solución. En este caso usted propone</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q32a" name="question32" value="A">
+            <label for="q32a">A. habilitar un servicio de gestión guiada donde un funcionario brinde el acompañamiento de los usuarios que lo requieran, para que realicen sus trámites directamente en la entidad y así dar solución oportuna a sus necesidades.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q32b" name="question32" value="B">
+            <label for="q32b">B. realizar un vídeo tutorial para los adultos mayores en el que se le explique cómo hacer los trámites a través del portal institucional, que se pasará por lo televisores de la sala de espera, así brinda herramientas de autogestión los ciudadanos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q32c" name="question32" value="C">
+            <label for="q32c">C. generar un componente educativo donde se capacite a los usuarios de forma grupal en el funcionamiento del portal web y los trámites que se realizan por ese medio, de esta forma facilitar el acceso de los ciudadanos al servicio.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback32" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: habilitar un servicio de gestión guiada donde un funcionario brinde el acompañamiento de los usuarios que lo requieran, para que realicen sus trámites directamente en la entidad y así dar solución oportuna a sus necesidades.
+    </div>
+</div>
+
+<div id="question-33" class="question-container">
+    <div class="question-number">Pregunta 33</div>
+    <div class="question-text">Un usuario se encuentra alterado porque llevaba mucho tiempo a la espera y solicita ser atendido por otro funcionario, alegando que no le gusta la atención que usted le ha brindado hasta el momento y que ha visto que las personas se demoran más en su cubículo que en los demás. En este caso usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q33a" name="question33" value="A">
+            <label for="q33a">A. le explica al ciudadano que los trámites que realizó antes de atenderlo se solucionaron en el tiempo estipulado para los mismos, inicia el trámite solicitándole la información pertinente para avanzar en su solicitud mientras su compañero puede tomar el caso.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q33b" name="question33" value="B">
+            <label for="q33b">B. permite que el ciudadano le comente los motivos de su molestia y a su vez indaga acerca de la solicitud, solicitándole que le permita atender la diligencia con agilidad mientras le escucha, mitigando su molestia por la demora y así brindarle un buen servicio además de una solución oportuna a su problemática.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q33c" name="question33" value="C">
+            <label for="q33c">C. dialoga con el ciudadano ofreciéndole disculpas y le solicita a uno de sus compañeros que le brinde la atención para darle tranquilidad al ciudadano y poder brindarle una atención oportuna a sus necesidades.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback33" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: permite que el ciudadano le comente los motivos de su molestia y a su vez indaga acerca de la solicitud, solicitándole que le permita atender la diligencia con agilidad mientras le escucha, mitigando su molestia por la demora y así brindarle un buen servicio además de una solución oportuna a su problemática.
+    </div>
+</div>
+
+<div id="question-34" class="question-container">
+    <div class="question-number">Pregunta 34</div>
+    <div class="question-text">Una ciudadana quiere información para instaurar un derecho de petición para que la entidad brinde soluciones a la comunidad de su barrio, pues se han visto afectados por la acumulación de basuras que no se recoge desde hace varios días, y esto ha atraído a animales y malos olores que ponen en riesgo la salubridad de las personas. En este caso usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q34a" name="question34" value="A">
+            <label for="q34a">A. explica a la ciudadana la forma en la que debe escribir el derecho de petición y la información que es necesario poner en ella, escribiendo en una hoja para que pueda realizarlo desde su casa, asegurando que pueda hacerlo correctamente.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q34b" name="question34" value="B">
+            <label for="q34b">B. tramita la solicitud de la ciudadana y le genera un derecho de petición con la información que ella aporta, para darle el número de radicado de su tramite y así solucionar su necesidad oportunamente.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q34c" name="question34" value="C">
+            <label for="q34c">C. explica a la ciudadana que en la pagina web de la entidad hay un instructivo con el paso a paso de cómo realizar un derecho de petición, para que ella se guíe y pueda presentar correctamente su solicitud.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback34" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: explica a la ciudadana la forma en la que debe escribir el derecho de petición y la información que es necesario poner en ella, escribiendo en una hoja para que pueda realizarlo desde su casa, asegurando que pueda hacerlo correctamente.
+    </div>
+</div>
+
+<div id="question-35" class="question-container">
+    <div class="question-number">Pregunta 35</div>
+    <div class="question-text">Usted labora como funcionario/a en una entidad y debe realizar el pago de nómina correspondiente para lo cual requiere que su asistente le reporte las horas de trabajo de cada uno de los empleados/as del lugar, pero su auxiliar cuenta con alto flujo de trabajo ese día, por lo que usted decide no contar con su ayuda; al día siguiente usted recibe un correo electrónico en el cual uno de los empleados exige un pago apropiado y se percata de que no estaba enterado que debía remunerarle las horas extra laboradas. Ante la situación descrita usted decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q35a" name="question35" value="A">
+            <label for="q35a">A. buscar a su asistente para ofrecerle una disculpa por la carga laboral y manifestar que requiere de su ayuda.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q35b" name="question35" value="B">
+            <label for="q35b">B. responder al empleado/a que le reporte cuántas horas extra laboro y pagarle al día siguiente.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q35c" name="question35" value="C">
+            <label for="q35c">C. contestar al empleado/a que la próxima quincena recibirá su pago completo y solicitar a su asistente que tenga en cuenta tal pago.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback35" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: buscar a su asistente para ofrecerle una disculpa por la carga laboral y manifestar que requiere de su ayuda.
+    </div>
+</div>
+
+<div id="question-36" class="question-container">
+    <div class="question-number">Pregunta 36</div>
+    <div class="question-text">Una ciudadana se acerca a la oficina de correspondencia, solicitando interponer una queja por la mala atención de un funcionario, por lo tanto, otro funcionario le aclara que en esta dependencia no puede realizar este trámite, sin embargo, la ciudadana se encuentra alterada por lo cual habla con voz y expresión corporal fuerte. Para brindar la atención correcta a la ciudadana el funcionario debe</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q36a" name="question36" value="A">
+            <label for="q36a">A. prestar atención a los argumentos y pormenores de la situación siendo empático, una vez le haya contado todos los detales explicarle que debe radicar la queja en la oficina de atención al ciudadano.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q36b" name="question36" value="B">
+            <label for="q36b">B. comunicarse con atención al usuario para informar acerca de la situación de la ciudadana, para tranquilizarla y a la vez agilizar la atención de su reclamación de forma oportuna.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q36c" name="question36" value="C">
+            <label for="q36c">C. escucharla prestando atención a sus argumentos y demostrar que comprende su malestar, una vez se haya tranquilizado explicarle que debe acercarse a la oficina de atención al ciudadano para radicar la queja.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback36" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: escucharla prestando atención a sus argumentos y demostrar que comprende su malestar, una vez se haya tranquilizado explicarle que debe acercarse a la oficina de atención al ciudadano para radicar la queja.
+    </div>
+</div>
+
+<div id="question-37" class="question-container">
+    <div class="question-number">Pregunta 37</div>
+    <div class="question-text">Usted se desempeña en una entidad como encargado/a de un proyecto social donde se brindan cursos de actividades recreativas a jóvenes y existe gran cantidad de personas interesadas en estos pero tienen muchas dudas frente a los requisitos que deben cumplir para su participación y rápidamente se generan rumores confusos. Ante la situación descrita usted decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q37a" name="question37" value="A">
+            <label for="q37a">A. publicar un comunicado en el cual se respondan todas las inquietudes de las personas.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q37b" name="question37" value="B">
+            <label for="q37b">B. confirmar la veracidad de los rumores confusos para poder iniciar con la participación.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q37c" name="question37" value="C">
+            <label for="q37c">C. gestionar una reunión informativa con los interesados/as para aclarar las inquietudes.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback37" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: gestionar una reunión informativa con los interesados/as para aclarar las inquietudes.
+    </div>
+</div>
+
+<div id="question-38" class="question-container">
+    <div class="question-number">Pregunta 38</div>
+    <div class="question-text">Usted labora en el área administrativa de una nueva entidad de salud que debe establecer los puntos de atención a los usuarios/as más adecuados y su jefe le indica que usted debe proponer una estrategia de obtención de la información necesaria para realizar la asignación del lugar de atención donde los usuarios/as deben asistir a sus diligencias médicas. Ante la situación descrita usted decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q38a" name="question38" value="A">
+            <label for="q38a">A. gestionar para cada usuario/a el punto de atención más cercano a su vivienda desde una plataforma tecnológica de ubicación.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q38b" name="question38" value="B">
+            <label for="q38b">B. contratar a una empresa encargada de realizar estudios con gran cantidad de datos de manera que se obtengan resultados favorables.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q38c" name="question38" value="C">
+            <label for="q38c">C. contactar a los usuarios/as para consultarles cual punto de atención es de su preferencia.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback38" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: gestionar para cada usuario/a el punto de atención más cercano a su vivienda desde una plataforma tecnológica de ubicación.
+    </div>
+</div>
+
+<div id="question-39" class="question-container">
+    <div class="question-number">Pregunta 39</div>
+    <div class="question-text">En el departamento de correspondencia, los funcionarios en ventanilla están teniendo dificultades con la comunicación con los usuarios, porque el intercomunicador que está en el vidrio que los separa se encuentra averiado y no les permite comunicarse bien. Para mitigar el problema el funcionario</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q39a" name="question39" value="A">
+            <label for="q39a">A. habla asegurándose que el ciudadano le escuche a través del vidrio, enmarcando su lenguaje en el respeto y la empatía necesarios, permitiendo que el ciudadano haga lo mismo y así poder establecer un canal de comunicación efectivo.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q39b" name="question39" value="B">
+            <label for="q39b">B. crea un formato que los ciudadanos diligencien con las opciones que brinda su servicio y los datos básicos que se requieren para tramitar las solicitudes. Disminuyendo la comunicación verbal para generar un canal de comunicación más efectivo y oportuno a la hora de brindar la atención.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q39c" name="question39" value="C">
+            <label for="q39c">C. genera una serie de carteles que pega en la ventanilla indicando que el intercomunicador está averiado y que es necesario hablar más fuerte para poder establecer comunicación, disculpándose por la molestia que esto pueda generar en el ciudadano.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback39" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: crea un formato que los ciudadanos diligencien con las opciones que brinda su servicio y los datos básicos que se requieren para tramitar las solicitudes. Disminuyendo la comunicación verbal para generar un canal de comunicación más efectivo y oportuno a la hora de brindar la atención.
+    </div>
+</div>
+
+<div id="question-40" class="question-container">
+    <div class="question-number">Pregunta 40</div>
+    <div class="question-text">Usted labora en una entidad financiera donde se encarga de notificar a los clientes deudores sus próximas fechas de pago límite para que sus propiedades no sean embargadas y se olvida de realizar una importante llamada telefónica a una persona que, de no realizar el pago correspondiente ese mismo día, será desalojada al siguiente. Tras lo sucedido, el cliente asiste a la entidad y se muestra muy alterado, comentando que no fue informado de su situación moratoria. Ante la situación descrita usted decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q40a" name="question40" value="A">
+            <label for="q40a">A. ofrecer al cliente una disculpa y reportar a su jefe lo sucedido para gestionar una nueva fecha de pago.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q40b" name="question40" value="B">
+            <label for="q40b">B. explicar al cliente el procedimiento que realiza la entidad ante el no pago y que puede realizar un proceso de queja si lo desea.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q40c" name="question40" value="C">
+            <label for="q40c">C. tranquilizar al cliente y decirle que debe investigar lo sucedido para aclarar la situación.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback40" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: ofrecer al cliente una disculpa y reportar a su jefe lo sucedido para gestionar una nueva fecha de pago.
+    </div>
+</div>
+<!-- fin -->
+
+<!-- inicio -->
+<div id="question-41" class="question-container">
+    <div class="question-number">Pregunta 41</div>
+    <div class="question-text">En una empresa se debe realizar un trabajo en equipo, después de reunirse el grupo de trabajo ha acordado una metodología para cumplir el objetivo, sin embargo, al día siguiente uno de los integrantes del equipo se acerca al líder para plantearle algunos cambios que se le ocurrieron a lo largo de la noche y que podrían agilizar el proceso y mejorar la calidad del producto final, por lo cual propone discutir de nuevo el tema con los otros integrantes. El líder duda, porque esta persona en particular es alguien con quien no tiene una buena relación debido a que es un reconocido partidario del partido político que representa la oposición a sus propias opiniones del tema, en esta situación el líder decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q41a" name="question41" value="A">
+            <label for="q41a">A. aceptar realizar los cambios que se proponen en la oferta, pues comprende que las diferentes opiniones políticas no deben interferir en el trabajo.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q41b" name="question41" value="B">
+            <label for="q41b">B. evaluar la propuesta presentada e indicarle al compañero que es correcta, sin embargo, la decisión ya se ha tomado y volver a discutir el tema es innecesario.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q41c" name="question41" value="C">
+            <label for="q41c">C. acceder a compartir y discutir esta nueva propuesta con el equipo, con el fin de analizar si es beneficiosa para el cumplimiento de la meta.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback41" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: acceder a compartir y discutir esta nueva propuesta con el equipo, con el fin de analizar si es beneficiosa para el cumplimiento de la meta.
+    </div>
+</div>
+
+<div id="question-42" class="question-container">
+    <div class="question-number">Pregunta 42</div>
+    <div class="question-text">Estando a una semana de entrega de resultados del proyecto, usted tiene aprobada una licencia no remunerada de dos días por una situación personal, esta licencia podría alargarse dependiendo de la situación; sin embargo, en el transcurso del primer día de licencia el jefe del departamento le informa que se adelantó la fecha de la entrega de resultados y que debe entregar sus aportes lo más pronto que le sea posible pues necesita revisar el alcance de los objetivos de todo equipo antes de lo previsto ya que fueron solicitados por gerencia. En este caso usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q42a" name="question42" value="A">
+            <label for="q42a">A. hace el envió de la información que tiene culminada y el avance de los procesos que le corresponden comprometiéndose a terminar una vez termine la licencia.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q42b" name="question42" value="B">
+            <label for="q42b">B. dialoga con su jefe exponiéndole su situación personal para que le permita realizar la entrega de resultados en la fecha establecida inicialmente.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q42c" name="question42" value="C">
+            <label for="q42c">C. pide autorización para que le envíen los archivos de su trabajo, posteriormente culmina la entrega de resultados que ya tenía preparada con anterioridad.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback42" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: pide autorización para que le envíen los archivos de su trabajo, posteriormente culmina la entrega de resultados que ya tenía preparada con anterioridad.
+    </div>
+</div>
+
+<div id="question-43" class="question-container">
+    <div class="question-number">Pregunta 43</div>
+    <div class="question-text">La próxima semana el departamento tiene programada una auditoría, para ello, se eligieron cuatro funcionarios con distintas funciones, uno de ellos es usted, que tendrá como labor, hacer la veces de auxiliar y ayudar en todos los procesos, para agilizar las actividades pertinentes; sin embargo, en el desarrollo de las tareas los funcionarios le dan órdenes y le solicitan actividades que no concuerdan entre sí, lo cual retrasa el avance del proceso de preparación para la auditoria. En este caso usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q43a" name="question43" value="A">
+            <label for="q43a">A. coordina una breve reunión donde expone la problemática y fomenta respetuosamente la unanimidad del equipo y la comunicación efectiva para generar acuerdos, y así asegurar que la situación mejore y se obtengan los resultados requeridos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q43b" name="question43" value="B">
+            <label for="q43b">B. dialoga con cada uno de los funcionarios haciendo énfasis en la importancia de la comunicación entre ellos como herramienta favorable para el avance del proceso, con objetivos y actividades claras para todos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q43c" name="question43" value="C">
+            <label for="q43c">C. genera un formato para que cada uno de los funcionarios escriba la actividad que se debe desarrollar, el cual debe contener la firma de los otros dos funcionarios, así asegurar que todos estén de acuerdo y avanzar en el proceso.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback43" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: coordina una breve reunión donde expone la problemática y fomenta respetuosamente la unanimidad del equipo y la comunicación efectiva para generar acuerdos, y así asegurar que la situación mejore y se obtengan los resultados requeridos.
+    </div>
+</div>
+
+<div id="question-44" class="question-container">
+    <div class="question-number">Pregunta 44</div>
+    <div class="question-text">Para establecer de qué manera emplear el presupuesto del próximo año, se acuerda con el equipo de trabajo realizar una reunión, sin embargo, la reunión se cruza con una cita médica. Ante esta situación, usted decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q44a" name="question44" value="A">
+            <label for="q44a">A. acudir a la cita médica y regresar para asistir los últimos minutos de la reunión.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q44b" name="question44" value="B">
+            <label for="q44b">B. posponer la cita médica que coincide con la reunión para poder asistir a esta última.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q44c" name="question44" value="C">
+            <label for="q44c">C. solicitarle a un compañero de trabajo que asista a la reunión para que le comunique lo tratado en la misma.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback44" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: posponer la cita médica que coincide con la reunión para poder asistir a esta última.
+    </div>
+</div>
+
+<div id="question-45" class="question-container">
+    <div class="question-number">Pregunta 45</div>
+    <div class="question-text">En un grupo de trabajo tienen que registrar la información del comité primario en un acta para la elaboración de informes y requerimientos solicitados al equipo. Sin embargo, durante la ausencia del coordinador, sus compañeros indican que no van a realizar el acta debido a que piensan que es algo innecesario. Ante esta situación, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q45a" name="question45" value="A">
+            <label for="q45a">A. propone a los compañeros, modificar a la situación actual un acta anterior por si acaso la requieren.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q45b" name="question45" value="B">
+            <label for="q45b">B. prefiere mantenerse neutral, aunque en el caso en el que coordinador solicite el acta, le comentará a este que sus compañeros decidieron no realizarla.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q45c" name="question45" value="C">
+            <label for="q45c">C. le expresa a los compañeros claramente que es una norma del área elaborar el acta porque esta puede ser requerida por los superiores, por lo que deben elaborarla.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback45" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: le expresa a los compañeros claramente que es una norma del área elaborar el acta porque esta puede ser requerida por los superiores, por lo que deben elaborarla.
+    </div>
+</div>
+
+<div id="question-46" class="question-container">
+    <div class="question-number">Pregunta 46</div>
+    <div class="question-text">Luego de estar desarrollando un proyecto por meses con sus compañeros de trabajo, usted se percata que se ha ido perdiendo el interés en este. Ante esta situación, usted debería</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q46a" name="question46" value="A">
+            <label for="q46a">A. proponer la realización de una salida al campo para hablar sobre el tema en un contexto distinto y así aumentar la motivación por el proyecto a realizar.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q46b" name="question46" value="B">
+            <label for="q46b">B. tomar la iniciativa realizando por su cuenta la fase en la cual se quedaron estancados, para así superar el desinterés y volver retomar el proyecto.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q46c" name="question46" value="C">
+            <label for="q46c">C. proponer dividir las actividades que quedan por hacer entre todos los compañeros de manera que sea más fácil finalizar el proyecto.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback46" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: tomar la iniciativa realizando por su cuenta la fase en la cual se quedaron estancados, para así superar el desinterés y volver retomar el proyecto.
+    </div>
+</div>
+
+<div id="question-47" class="question-container">
+    <div class="question-number">Pregunta 47</div>
+    <div class="question-text">Usted con su equipo de trabajo recibe la indicación por parte de su superior, de cumplir con unas metas para la realización de un proyecto, es por esto, que cada uno se compromete a realizar una función en pro de llegar al resultado esperado. Sin embargo, tiene mucho trabajo por realizar referente a otros procesos que le fueron asignados previamente. Ante la situación anterior, lo mejor que podría realizar usted es</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q47a" name="question47" value="A">
+            <label for="q47a">A. terminar primero las actividades propias del cargo y cuando las finalice dedicarse al desarrollo del nuevo proyecto.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q47b" name="question47" value="B">
+            <label for="q47b">B. cumplir con lo que se comprometió a realizar ante su equipo de trabajo, pues si no lo realiza, el trabajo de los demás integrantes se verá afectado.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q47c" name="question47" value="C">
+            <label for="q47c">C. realizar una lista de las cinco actividades más urgentes propias del cargo para darles prioridad y seguidamente se uniría al grupo para trabajar en el proyecto.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback47" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: realizar una lista de las cinco actividades más urgentes propias del cargo para darles prioridad y seguidamente se uniría al grupo para trabajar en el proyecto.
+    </div>
+</div>
+
+<div id="question-48" class="question-container">
+    <div class="question-number">Pregunta 48</div>
+    <div class="question-text">En una reunión de equipo para la organización de la actividad del día de la mujer, dos de sus compañeros han iniciado una discusión, pues uno de ellos propone dar un detalle personalizado con el nombre de cada funcionaria y su color favorito y el otro refiere es mejor que sea un dalle genérico para no tener confusiones, por lo cual la reunión no ha avanzado y no se ha podido establecer la actividad que se desarrollará. En este caso usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q48a" name="question48" value="A">
+            <label for="q48a">A. propone primero se verifiquen los fondos y costos que se tiene para desarrollar la actividad, así poder definir cuál de las dos ideas se ajusta más al equipo.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q48b" name="question48" value="B">
+            <label for="q48b">B. interviene en la discusión de los compañeros y modera una votación para seleccionar la idea que mejor se ajusta al equipo y al presupuesto.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q48c" name="question48" value="C">
+            <label for="q48c">C. apoya la idea de los detalles genéricos pues le parece más sencillo y oportuno, así además evitará confusiones con los colores e información que se deba recolectar.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback48" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: interviene en la discusión de los compañeros y modera una votación para seleccionar la idea que mejor se ajusta al equipo y al presupuesto.
+    </div>
+</div>
+
+<div id="question-49" class="question-container">
+    <div class="question-number">Pregunta 49</div>
+    <div class="question-text">Dentro del departamento se han venido presentando inconvenientes que afectan el clima laboral, pues dos de las funcionarias que tenían una relación muy estrecha han tenido una discusión y no la han solucionad, por lo tanto, el departamento se encuentra dividido lo cual ha afectado no solo la sensación del clima laboral sino que también afecta la consecución de los objetivos del equipo. En este caso usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q49a" name="question49" value="A">
+            <label for="q49a">A. dialoga con las dos compañeras promoviendo una conversación armónica y guiándolas a la solución de la problemática; finalmente desarrolla una reunión general del equipo en la que los motiva y enfoca en la consecución de los objetivos del equipo.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q49b" name="question49" value="B">
+            <label for="q49b">B. escala la situación al departamento de bienestar con el fin de que este realice una actividad donde se pueda expresar la situación y buscar soluciones para la misma, retomando el ambiente laboral saludable para todo el equipo.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q49c" name="question49" value="C">
+            <label for="q49c">C. dialoga con cada una de las compañeras para identificar la problemática real y brindar soluciones con el fin de restaurar la relación de estas y así contribuir con el adecuado funcionamiento del equipo de trabajo.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback49" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: dialoga con las dos compañeras promoviendo una conversación armónica y guiándolas a la solución de la problemática; finalmente desarrolla una reunión general del equipo en la que los motiva y enfoca en la consecución de los objetivos del equipo.
+    </div>
+</div>
+
+<div id="question-50" class="question-container">
+    <div class="question-number">Pregunta 50</div>
+    <div class="question-text">Uno de sus compañeros le entrega el reporte que le corresponde, sin embargo, al revisarlo evidencia que el reporte tiene unos desaciertos de método y algunas partes del proceso; al acercarse a su compañero e indagar sobre estas, alude que de esa forma manejaban el proceso en su anterior trabajo y creyó que se desarrollaba de la misma manera pero que lo corregirá para poder pasarle el reporte adecuadamente. En esta situación usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q50a" name="question50" value="A">
+            <label for="q50a">A. se comunica con el jefe inmediato para que este coordine una capacitación de los procesos que le corresponden al compañero para poder subsanar el error y evitar que se vuelva a presentar.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q50b" name="question50" value="B">
+            <label for="q50b">B. se soporta en reportes anteriores para explicarle al compañero la forma en que debe realizar el reporte y los procesos correspondientes, finalmente le facilita un documento guía.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q50c" name="question50" value="C">
+            <label for="q50c">C. le explica dónde puede conseguir la información correspondiente para que el acceda y pueda desarrollar los procesos de forma satisfactoria.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback50" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: se soporta en reportes anteriores para explicarle al compañero la forma en que debe realizar el reporte y los procesos correspondientes, finalmente le facilita un documento guía.
+    </div>
+</div>
+<!-- fin -->
+
+<!-- inicio -->
+<div id="question-51" class="question-container">
+    <div class="question-number">Pregunta 51</div>
+    <div class="question-text">Usted se encuentra preocupado porque el abastecimiento de papel usado para impresiones está teniendo demora en ser repuesto, y el correcto funcionamiento dentro del departamento se está viendo afectado por esto. Dado que usted tiene prioridad en imprimir unos documentos importantes, decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q51a" name="question51" value="A">
+            <label for="q51a">A. se remite directamente hacía el punto de suministro de papel para llevarlo a su dependencia.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q51b" name="question51" value="B">
+            <label for="q51b">B. realiza otras actividades que no requieren el uso de impresiones para avanzar.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q51c" name="question51" value="C">
+            <label for="q51c">C. solicitar el favor a un compañero de servicios generales para que vaya al lugar de almacenamiento de papel.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback51" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: se remite directamente hacía el punto de suministro de papel para llevarlo a su dependencia.
+    </div>
+</div>
+
+<div id="question-52" class="question-container">
+    <div class="question-number">Pregunta 52</div>
+    <div class="question-text">A usted junto a su equipo de trabajo se les solicita plantear una estrategia que favorezca la puesta en marcha de un plan organizacional para fortalecer la cooperación entre la entidad y el sector del gobierno encargado de regular la actividad de la misma, toda vez que se requiere implementar unas nuevas líneas de trabajo que ya fueron presentadas pero no aceptadas por dicho sector gubernamental al considerar que iban en contra de los intereses de la nación, por lo que ya han sido replanteadas pero se requiere presentarlas nuevamente buscando su aprobación a través del establecimiento de un vínculo más cercano con el sector. Teniendo en cuenta lo anterior, usted consideraría como el eje central más adecuado de la estrategia a plantear</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q52a" name="question52" value="A">
+            <label for="q52a">A. determinar la realización periódica de encuentros intersectoriales que faciliten el reconocimiento mutuo de los planes proyectados y se apoye su desarrollo.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q52b" name="question52" value="B">
+            <label for="q52b">B. identificar y resaltar la utilidad que las líneas de acción pueden representar tanto para la entidad como para los entes gubernamentales.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q52c" name="question52" value="C">
+            <label for="q52c">C. diseñar una propuesta que incluya la implementación de actuaciones propuestas desde el sector del gobierno y que la entidad pueda llevar a cabo.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback52" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: identificar y resaltar la utilidad que las líneas de acción pueden representar tanto para la entidad como para los entes gubernamentales.
+    </div>
+</div>
+
+<div id="question-53" class="question-container">
+    <div class="question-number">Pregunta 53</div>
+    <div class="question-text">En la entidad, varios de los funcionarios están ausentes debido a una capacitación que se hace en otra ciudad, la cual dura una semana, por lo tanto, se le ha solicitado a los funcionarios del departamento apoyar diariamente dicha área, al menos dos horas siempre que no tengan trabajo prioritario propio de cada cargo que atender, con el fin de descongestionar el sistema y atender las peticiones de los ciudadanos, ante esto usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q53a" name="question53" value="A">
+            <label for="q53a">A. realiza una lista de tareas de mayor importancia para una vez finalizadas atender las demandas del área de atención al ciudadano.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q53b" name="question53" value="B">
+            <label for="q53b">B. organiza un cronograma con las tareas a ejecutar propias del cargo en el que aparta dos horas del día para apoyar al equipo de atención al usuario.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q53c" name="question53" value="C">
+            <label for="q53c">C. verifica con el equipo de atención al usuario cuál es el horario de mayor demanda en aras de apoyarlo en dicha hora.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback53" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: realiza una lista de tareas de mayor importancia para una vez finalizadas atender las demandas del área de atención al ciudadano.
+    </div>
+</div>
+
+<div id="question-54" class="question-container">
+    <div class="question-number">Pregunta 54</div>
+    <div class="question-text">En el mes de abril ingresa un funcionario nuevo al departamento de gestión humana, después de haber realizado y aprobado el proceso de capacitación e inducción de la entidad para el cargo que ingresa a ocupar. Al iniciar las labores se evidencia que el nuevo funcionario tiene dudas acerca de los procesos ya que ha cometido algunos errores de procesos, lo que afecta al equipo de trabajo y específicamente a las funciones que usted desarrolla en el departamento. En este caso usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q54a" name="question54" value="A">
+            <label for="q54a">A. dialoga con el compañero mostrándole los errores cometidos, posteriormente, le facilita los protocolos de realización de los procesos con el fin de brindarle una herramienta que favorezca su aprendizaje y el desarrollo de procesos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q54b" name="question54" value="B">
+            <label for="q54b">B. le recuerda la información dada en la capacitación de todos los procesos al funcionario con el fin de promover el aprendizaje y que se le facilite realizarlos de forma adecuada.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q54c" name="question54" value="C">
+            <label for="q54c">C. identifica con el funcionario cuales son los errores y dudas, posteriormente las aclara una por una, finalmente supervisa las actividades asegurando que se desarrollen adecuadamente en el proceso de aprendizaje.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback54" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: identifica con el funcionario cuales son los errores y dudas, posteriormente las aclara una por una, finalmente supervisa las actividades asegurando que se desarrollen adecuadamente en el proceso de aprendizaje.
+    </div>
+</div>
+
+<div id="question-55" class="question-container">
+    <div class="question-number">Pregunta 55</div>
+    <div class="question-text">En la entidad donde usted labora se realiza de manera sorpresiva una auditoría externa que requiere la participación de todos los colaboradores de la entidad para organizar los documentos y procesos que están siendo solicitados; sin embargo, usted había solicitado un permiso con anterioridad para asistir a un evento personal durante la mañana, para lo cual ya había cumplido con la reposición del tiempo previamente. Teniendo en cuenta la situación, usted decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q55a" name="question55" value="A">
+            <label for="q55a">A. apoyar el desarrollo de la revisión dada la urgencia presentada y posponer su evento.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q55b" name="question55" value="B">
+            <label for="q55b">B. asistir al evento, dado que ya había repuesto el tiempo y regresar rápidamente para apoyar la revisión.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q55c" name="question55" value="C">
+            <label for="q55c">C. colaborar con los documentos que corresponden a su labor para terminar anticipadamente.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback55" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: apoyar el desarrollo de la revisión dada la urgencia presentada y posponer su evento.
+    </div>
+</div>
+
+<div id="question-56" class="question-container">
+    <div class="question-number">Pregunta 56</div>
+    <div class="question-text">La entidad pretende realizar una actualización de la infraestructura tecnológica de la misma, entre otros asuntos, esto implica actualizar los software y ampliativos que los funcionarios usan para realizar sus tareas, teniendo en cuenta que llevan años trabajando con el mismo sistema seguramente generará molestias comunes que se producen con los cambios, por lo tanto, usted como líder de dicho proceso decide capacitar</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q56a" name="question56" value="A">
+            <label for="q56a">A. a la mitad de la entidad, de modo que una parte de la entidad trabaje con el sistema antiguo, mientras los demás se adaptan al nuevo.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q56b" name="question56" value="B">
+            <label for="q56b">B. por departamentos y designar líderes en cada equipo, de modo que cada líder sea el primero en implementar el nuevo sistema.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q56c" name="question56" value="C">
+            <label for="q56c">C. a toda la entidad para que todos estén preparados una vez se realice el cambio de sistema.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback56" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: por departamentos y designar líderes en cada equipo, de modo que cada líder sea el primero en implementar el nuevo sistema.
+    </div>
+</div>
+
+<div id="question-57" class="question-container">
+    <div class="question-number">Pregunta 57</div>
+    <div class="question-text">El gobierno quiere promover las funciones públicas en zonas a las que antes no llegaba, por razón de haber sido territorios en conflicto que no permitían la entrada de estos. Ahora, varios de los territorios que tenían cerradas sus puertas a estas funciones públicas, han abierto sus fronteras y están a la espera de la instalación de estas. La organización para la cual usted trabaja decide instalarse en este territorio, por lo que usted cómo líder del equipo para darse a conocer ante la población decide iniciar por</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q57a" name="question57" value="A">
+            <label for="q57a">A. presentar en un comunicado a través de la emisora local, información sobre los servicios que ofrece y sus beneficios a la población.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q57b" name="question57" value="B">
+            <label for="q57b">B. visitar cada unas de las viviendas de los ciudadanos para darles a conocer los servicios que presta la entidad.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q57c" name="question57" value="C">
+            <label for="q57c">C. instalar un puesto de atención al ciudadano móvil en el parque los días domingos para que se acerquen los interesados.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback57" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: presentar en un comunicado a través de la emisora local, información sobre los servicios que ofrece y sus beneficios a la población.
+    </div>
+</div>
+
+<div id="question-58" class="question-container">
+    <div class="question-number">Pregunta 58</div>
+    <div class="question-text">Para mantenerse en constante mejora y con conocimientos actualizados, la entidad requiere que los empleados estén en constante búsqueda de cursos y capacitaciones, los cuales permiten el crecimiento personal y organizacional. En este momento, se solicita que participen de un curso sobre las implicaciones de la Reforma Tributaria en su sector, pero el horario de esta, se cruza con un curso de idiomas que usted quiere realizar. En ese caso usted decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q58a" name="question58" value="A">
+            <label for="q58a">A. estudiar el tema de la reforma por su cuenta con el material de la web y así poder realizar el curso de idiomas.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q58b" name="question58" value="B">
+            <label for="q58b">B. realizar el curso de idiomas y gestionar por otro medio una capacitación sobre la reforma tributaria.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q58c" name="question58" value="C">
+            <label for="q58c">C. aplazar el curso de idiomas para hacerlo tan pronto finalice con la capacitación que le solicita la entidad.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback58" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: aplazar el curso de idiomas para hacerlo tan pronto finalice con la capacitación que le solicita la entidad.
+    </div>
+</div>
+
+<div id="question-59" class="question-container">
+    <div class="question-number">Pregunta 59</div>
+    <div class="question-text">Para el diseño de una alianza con una organización nueva en el sector, el líder de un proyecto realiza un análisis de las ventajas que tiene esta alianza. Al final del día, da su aprobación y se continúa el proyecto. Usted como empleado encuentra un error en el análisis que realizó el supervisor, por lo que decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q59a" name="question59" value="A">
+            <label for="q59a">A. acudir al líder y comentarle la situación sugiriéndole una forma de corregir la dificultad.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q59b" name="question59" value="B">
+            <label for="q59b">B. realizar de nuevo el análisis con el error corregido y presentarlo mientras retira el informe que tiene problemas.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q59c" name="question59" value="C">
+            <label for="q59c">C. sugerirle al líder revisar de nuevo el informe porque usted cree que en el informe hay un error.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback59" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: acudir al líder y comentarle la situación sugiriéndole una forma de corregir la dificultad.
+    </div>
+</div>
+
+<div id="question-60" class="question-container">
+    <div class="question-number">Pregunta 60</div>
+    <div class="question-text">En la última semana, su jefe le ha solicitado en varias oportunidades extender su jornada laboral para lograr terminar unos informes de gestión que se requieren de carácter urgente para la reunión mensual a realizar en dos semanas, lo cual ha generado que sus demás labores presenten atrasos dado que dichos informes fueron inesperados y requieren de múltiples gestiones que ocupan casi la totalidad de su jornada. Teniendo en cuenta esta dificultad, usted decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q60a" name="question60" value="A">
+            <label for="q60a">A. sugerir a su jefe que le permita solicitar el apoyo extra de un compañero de su misma área que pueda ayudarle en la realización simultánea de sus labores.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q60b" name="question60" value="B">
+            <label for="q60b">B. continuar apoyando a su jefe con la tarea, dada la urgencia de la misma, reorganizando sus tiempos para igualmente dar cumplimiento a sus deberes.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q60c" name="question60" value="C">
+            <label for="q60c">C. dar prioridad y premura a los informes, teniendo en cuenta la responsabilidad que representan para usted, cumpliendo posteriormente lo demás.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback60" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: continuar apoyando a su jefe con la tarea, dada la urgencia de la misma, reorganizando sus tiempos para igualmente dar cumplimiento a sus deberes.
+    </div>
+</div>
+<!-- fin -->
+<!-- inicio -->
+<div id="question-61" class="question-container">
+    <div class="question-number">Pregunta 61</div>
+    <div class="question-text">Usted es funcionario del departamento de gestión documental y se inscribe voluntariamente a una capacitación de actualización de procesos de digitalización de documentos, pues el departamento y el equipo de trabajo, dependen de usted para agilizar dicho proceso; sin embargo, usted tiene varias tareas pendientes por desarrollar adicionales a la capacitación, por lo que su jefe le pide no descuidarlas. Con el fin de poder llevar acabo la capacitación y cumplir con sus demás funciones beneficiando al departamento, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q61a" name="question61" value="A">
+            <label for="q61a">A. realiza la capacitación de forma ágil con el fin de poder retomar las labores que tiene pendientes por realizar y cumplir con todas sus tareas.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q61b" name="question61" value="B">
+            <label for="q61b">B. identifica los aspectos de importancia en la capacitación, para leerlos y aprenderlos detenidamente una vez organice su tiempo para ello.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q61c" name="question61" value="C">
+            <label for="q61c">C. organiza la agenda de trabajo, estableciendo un tiempo específico para realizar la capacitación así cumple con los deberes encargados.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback61" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: organiza la agenda de trabajo, estableciendo un tiempo específico para realizar la capacitación así cumple con los deberes encargados.
+    </div>
+</div>
+
+<div id="question-62" class="question-container">
+    <div class="question-number">Pregunta 62</div>
+    <div class="question-text">A usted se le ha presentado una calamidad domestica por lo cual debe retirarse de la entidad sin culminar sus deberes. Una vez atendida su situación el superior le comunica que es necesario que realice el envío de los aportes que le correspondían para el informe mensual ya que requieren con premura la información, recordándole que este será presentado al día siguiente ante el auditor. En este caso para cumplir con la entrega del aporte correspondiente, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q62a" name="question62" value="A">
+            <label for="q62a">A. desarrolla las partes faltantes del aporte, además revisa cada parte asegurando haber trabajado adecuadamente la información, posteriormente hace el envío de esta al superior.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q62b" name="question62" value="B">
+            <label for="q62b">B. envía la información que tiene desarrollada, adicionalmente se compromete llegar temprano y terminar el aporte tan pronto retorne a la entidad el día siguiente.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q62c" name="question62" value="C">
+            <label for="q62c">C. solicita permiso al superior para manejar la información del informe fuera de la entidad con el fin de terminar en casa la parte que le falta y poder entregar en el horario permitido.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback62" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: desarrolla las partes faltantes del aporte, además revisa cada parte asegurando haber trabajado adecuadamente la información, posteriormente hace el envío de esta al superior.
+    </div>
+</div>
+
+<div id="question-63" class="question-container">
+    <div class="question-number">Pregunta 63</div>
+    <div class="question-text">En la alcaldía del municipio se desarrolla un programa de enseñanza basado en la lectura para niños, niñas y adolescentes; por tanto, la alcaldía ha decidido otorgar becas para un curso de idiomas a cinco de los niños participantes; como estos niños deben ser seleccionados en consenso por el grupo de tutores del programa quienes no permanecen en la entidad, la alcaldía le delega a usted la tarea de contactar a los tutores, les informe y se encargue de transmitir la información de los niños seleccionados a la entidad, para hacer la inscripción correspondiente. Con el fin de hacer la tarea con prontitud y teniendo en cuenta que los tutores deben llegar a un consenso para becar a los niños, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q63a" name="question63" value="A">
+            <label for="q63a">A. se comunica telefónicamente con cada tutor del programa para darle la información, además le solicita el nombre de los niños que consideran oportunos para la beca motivándolos a tomar una decisión con prontitud.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q63b" name="question63" value="B">
+            <label for="q63b">B. se comunica telefónicamente con los tutores, explicándoles la información sobre la beca, adicionalmente les ayuda a definir un horario para que se reúnan y definan en conjunto cuáles serán los niños seleccionados.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q63c" name="question63" value="C">
+            <label for="q63c">C. envía un correo a cada uno de los tutores de los niños, compartiendo la información que deben tener en cuenta para otorgar las becas, así estos pueden definir y enviarle la información de los niños seleccionados.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback63" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: se comunica telefónicamente con los tutores, explicándoles la información sobre la beca, adicionalmente les ayuda a definir un horario para que se reúnan y definan en conjunto cuáles serán los niños seleccionados.
+    </div>
+</div>
+
+<div id="question-64" class="question-container">
+    <div class="question-number">Pregunta 64</div>
+    <div class="question-text">En el departamento de calidad hay un practicante próximo a terminar su contrato de aprendizaje con la entidad, para lo cual debe presentar su proyecto de grado ante los líderes de departamento de la entidad y coordinar una fecha con ellos para dicha presentación, sin embargo, ha evidenciado que le es difícil contactarse con los líderes debido a que no lo conocen por lo que no lo atienden, además no comprenden la importancia que tiene la presentación a realizar. Por este motivo el practicante se comunica con usted quien se desempeña como auxiliar administrativo del departamento, solicitando ayuda para organizar su presentación. En este caso teniendo en cuenta su capacidad comunicativa con los líderes de la entidad y para ayudarle al practicante, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q64a" name="question64" value="A">
+            <label for="q64a">A. llama a los líderes de los departamentos y les informa que un practicante requiere transmitirles una información, para que esos le contacten y puedan concretar una fecha.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q64b" name="question64" value="B">
+            <label for="q64b">B. se comunica con los líderes de departamento, comenta la situación para que estos atiendan al practicante y definan la fecha en que se puede realizar la presentación del proyecto.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q64c" name="question64" value="C">
+            <label for="q64c">C. le facilita los números de contacto y correo electrónicos de los lideres para que el practicante se comunique por este medio y pueda concretar la presentación.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback64" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: se comunica con los líderes de departamento, comenta la situación para que estos atiendan al practicante y definan la fecha en que se puede realizar la presentación del proyecto.
+    </div>
+</div>
+
+<div id="question-65" class="question-container">
+    <div class="question-number">Pregunta 65</div>
+    <div class="question-text">La alcaldía municipal desarrolla una estrategia para intervención educativa por medio del arte en niños, niñas y adolescentes; por lo que tiene planeado para este mes un evento donde se incluirán a las familias de los niños, pues la entidad requiere afianzar el contacto con la población para promover el control de consumo de drogas. Dicho evento está planeado y listo para ejecutar como se estipuló con la entidad, sin embargo, dos de las personas a cargo han renunciado por lo que el líder de la estrategia y le solicita a usted quién no conoce nada del evento revisar la información y asegurar que los aspectos logísticos con terceros como mesas, sillas y carpas, lleguen adecuadamente al evento. Para asegurar la logística del evento, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q65a" name="question65" value="A">
+            <label for="q65a">A. contacta a los funcionarios que planearon la ejecución del evento para que le orienten frente a los aspectos que hacían falta, de esa forma puede trabajar oportunamente en lo demás.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q65b" name="question65" value="B">
+            <label for="q65b">B. contacta a las empresas que prestarán el servicio logístico indagando y verificando la prestación del servicio para la entidad, asegurando cumplir con el proceso de solicitud y la confirmación de fecha de ejecución.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q65c" name="question65" value="C">
+            <label for="q65c">C. revisa la cantidad de invitados entre niños, padres y funcionarios; con el fin de solicitar la cantidad adecuada de artículos logísticos para la ejecución del evento, de esta forma asegura el cumplimiento.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback65" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: contacta a las empresas que prestarán el servicio logístico indagando y verificando la prestación del servicio para la entidad, asegurando cumplir con el proceso de solicitud y la confirmación de fecha de ejecución.
+    </div>
+</div>
+
+<div id="question-66" class="question-container">
+    <div class="question-number">Pregunta 66</div>
+    <div class="question-text">Dentro del servicio de atención al ciudadano se desarrolla un proceso de análisis a las opiniones de los ciudadanos con respecto a la atención recibida, para hacer cambios en el servicio; para lo cual, lo han designado a usted y a otro funcionario, usted se encargará de hacer la recolección de la información por medio de formatos físicos a los ciudadanos y su compañero se encargará de generar el informe respectivo. El jefe de departamento le solicita a su compañero que presente a la mayor brevedad un resumen de la información obtenida hasta el momento para poder evaluar la efectividad que está teniendo el proceso. Con el fin de ayudar a su compañero a cumplir con la solicitud hecha por el superior, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q66a" name="question66" value="A">
+            <label for="q66a">A. le comparte el consolidado de datos y le explica cuáles han sido los tópicos de respuesta de los ciudadanos para que se centre en estos aspectos al presentar el resumen.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q66b" name="question66" value="B">
+            <label for="q66b">B. le facilita al compañero los formatos de recolección de la información para que este pueda hacer el análisis de la información y presentar los datos de resumen solicitados.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q66c" name="question66" value="C">
+            <label for="q66c">C. le sugiere al compañero que determine cuáles son los datos de importancia para presentar en el resumen así puede compartirlos con él para que haga el respectivo análisis.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback66" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: le comparte el consolidado de datos y le explica cuáles han sido los tópicos de respuesta de los ciudadanos para que se centre en estos aspectos al presentar el resumen.
+    </div>
+</div>
+
+<div id="question-67" class="question-container">
+    <div class="question-number">Pregunta 67</div>
+    <div class="question-text">Al departamento ha ingresado un nuevo funcionario quien será el nuevo líder de uno de los equipos de trabajo. Sin embargo, en la reunión de bienvenida se evidencia que no había tenido asistente con anterioridad, por lo que desconoce los procesos que este funcionario realiza para contribuir al desarrollo de las funciones de liderazgo, por tal motivo, le solicita al funcionario encargado de asistirle apoyo en su proceso de adaptación mancomunada. Con el fin de favorecer la adaptación del nuevo líder, el funcionario</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q67a" name="question67" value="A">
+            <label for="q67a">A. identifica en que aspectos tiene dudas el líder y le apoya con los procesos, explicándole cada uno, asegurando que pueda tener claridad de la forma en que pueden trabajar y aprovechar oportunamente el apoyo.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q67b" name="question67" value="B">
+            <label for="q67b">B. hace una guía explicativa acerca los procesos que se desarrolla como asistente del cargo, señalando los de más importancia, para que el líder pueda conocerlos y aprovecharlos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q67c" name="question67" value="C">
+            <label for="q67c">C. le comparte todos los documentos relacionados con los procesos que puede desarrollar, con el fin de que este los conozca y se le facilite adaptarse a ese apoyo.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback67" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: identifica en que aspectos tiene dudas el líder y le apoya con los procesos, explicándole cada uno, asegurando que pueda tener claridad de la forma en que pueden trabajar y aprovechar oportunamente el apoyo.
+    </div>
+</div>
+
+<div id="question-68" class="question-container">
+    <div class="question-number">Pregunta 68</div>
+    <div class="question-text">Dentro del cronograma mensual estipulado para el mes de abril, se deben realizar unas modificaciones en los procesos del departamento debido a órdenes de la entidad, ya que se pretende hacer cada proceso más ágil. Con el fin alcanzar el objetivo, el funcionario encargado de la tarea debe reunirse con cada miembro del departamento de forma individual, sin embargo, a este se le ha dificultado el desarrollo de su tarea pues le ha sido difícil encontrar a los funcionarios y concretar un horario de trabajo. Por esta razón se contacta con usted, pues considera que debido a sus funciones asistenciales en el departamento puede ayudarle a concretar los encuentros. En este caso usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q68a" name="question68" value="A">
+            <label for="q68a">A. contacta a los funcionarios que son requeridos, compartiendo la información con el fin de ayudar a concretar un encuentro para desarrollar la tarea.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q68b" name="question68" value="B">
+            <label for="q68b">B. le comparte los correos electrónicos de los funcionarios del departamento, para que este pueda comunicarse con ellos y concretar la reunión.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q68c" name="question68" value="C">
+            <label for="q68c">C. les comenta a los funcionarios del departamento que otro funcionario los requiere para una tarea, con el fin de que estos le contacten oportunamente.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback68" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: contacta a los funcionarios que son requeridos, compartiendo la información con el fin de ayudar a concretar un encuentro para desarrollar la tarea.
+    </div>
+</div>
+
+<div id="question-69" class="question-container">
+    <div class="question-number">Pregunta 69</div>
+    <div class="question-text">Usted debe realizar caracterizaciones a las familias del municipio para inscribirlos en un programa de apoyo económico. Para el bimestre en curso se tenía proyectada la caracterización del setenta por ciento de la población, sin embargo, la entidad decide acelerar el proceso para poder iniciar con la inscripción al programa y el posterior desembolso económico a las familias, por lo que requiere la caracterización total. Por este motivo, contacta al funcionario encargado de las caracterizaciones, y este refiere que puede reunir la información que propone la entidad. Buscando cumplir con el objetivo de la entidad, en el tiempo estipulado, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q69a" name="question69" value="A">
+            <label for="q69a">A. genera un formato de auto diligenciamiento para distribuirlo en las familias a las que visita, dándoles la orientación correspondiente para posteriormente hacer el análisis y cumplir el objetivo.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q69b" name="question69" value="B">
+            <label for="q69b">B. establece una meta diaria de caracterizaciones a realizar, agendando ese número de familias, así se desplaza a las visitas con la seguridad de encontrar a las familias en casa.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q69c" name="question69" value="C">
+            <label for="q69c">C. modifica la forma en que realiza las caracterizaciones de familias, centrándose en los aspectos más importantes para poder abarcar mayor cantidad en el tiempo estipulado.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback69" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: establece una meta diaria de caracterizaciones a realizar, agendando ese número de familias, así se desplaza a las visitas con la seguridad de encontrar a las familias en casa.
+    </div>
+</div>
+
+<div id="question-70" class="question-container">
+    <div class="question-number">Pregunta 70</div>
+    <div class="question-text">El departamento de gestión al ciudadano realiza actividades de capacitación a los ciudadanos en temáticas de manejo del portal web, en la sala de computadores. Una hora antes de la capacitación programada, usted quien se encarga de organizar y separar los espacios para las capacitaciones, evidencia que los computadores con los que se realiza la capacitación están teniendo problemas de conectividad, por lo que no pueden ser utilizados para el proceso y no hay disponibilidad de más equipos para cumplir con la capacitación como se desarrolla normalmente. En este caso, con el fin de asegurar que el funcionario encargado pueda brindar la capacitación, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q70a" name="question70" value="A">
+            <label for="q70a">A. contacta al departamento de sistemas para que estos revisen la conectividad de los computadores, así se puede realizar la capacitación con el apoyo de cómputo que se requiere para transmitir la información necesaria a los ciudadanos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q70b" name="question70" value="B">
+            <label for="q70b">B. informa al funcionario encargado de la capacitación acerca de la falla, posteriormente le ayuda buscando y facilitándole las herramientas que este considera necesarias para poder brindar la capacitación sin el apoyo de los computadores.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q70c" name="question70" value="C">
+            <label for="q70c">C. informa al superior de la situación que se presenta, con el fin de que este pueda encontrar una alternativa de solución que permita reparar los computadores rápidamente y finalmente puede capacitar de forma oportuna.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback70" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: informa al funcionario encargado de la capacitación acerca de la falla, posteriormente le ayuda buscando y facilitándole las herramientas que este considera necesarias para poder brindar la capacitación sin el apoyo de los computadores.
+    </div>
+</div>
+
+<!-- fin -->
+<!-- inicio -->
+<div id="question-71" class="question-container">
+    <div class="question-number">Pregunta 71</div>
+    <div class="question-text">Usted ha sido enviado en el horario de la mañana a un evento de capacitación por su jefe inmediato, para que comprenda la forma en que debe adecuar algunas de sus funciones a la actualización del sistema de la entidad; al salir del evento se encuentra con los demás auxiliares administrativos que ingresan a capacitación en la tarde sobre manejo de documentos y envío de información, funciones que usted no desarrolla actualmente aunque estén estipuladas como funciones propias a su cargo, por esto los compañeros le sugieren que también tome esa capacitación, pues a pesar de no realizar esos procesos actualmente, es algo que cualquier funcionario debería manejar. En este caso, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q71a" name="question71" value="A">
+            <label for="q71a">A. toma la jornada de capacitación de la tarde, prestando atención y cuidado al manejo de documentos y envío de información, aprovechando el espacio para fortalecer sus habilidades.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q71b" name="question71" value="B">
+            <label for="q71b">B. retorna al departamento y solicita autorización al jefe inmediato para tomar la segunda parte de la capacitación, pues considera que es de importancia para sus funciones.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q71c" name="question71" value="C">
+            <label for="q71c">C. finaliza la jornada de capacitación, posteriormente retoma sus funciones apoyándose en los materiales y apuntes tomados sobre la utilización del sistema iniciando la adecuación propuesta.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback71" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: finaliza la jornada de capacitación, posteriormente retoma sus funciones apoyándose en los materiales y apuntes tomados sobre la utilización del sistema iniciando la adecuación propuesta.
+    </div>
+</div>
+
+<div id="question-72" class="question-container">
+    <div class="question-number">Pregunta 72</div>
+    <div class="question-text">Usted se desempeña como asistente del jefe de departamento de costos, quien es requerido por un funcionario de otro departamento de bienestar para solicitar autorización de desarrollar una estrategia de intervención al equipo de trabajo, con el fin de incrementar la motivación y el alcance de los objetivos propuestos por la entidad. No obstante, el jefe no se encuentra dentro de la entidad, sin embargo, el funcionario de bienestar le pide a usted contactarlo pues debe dejar el cronograma de intervenciones estipulado ese mismo día, para iniciar ejecución la siguiente semana. En este caso respondiendo oportunamente a la situación, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q72a" name="question72" value="A">
+            <label for="q72a">A. se comunica con el jefe para comentarle que hay un funcionario del departamento de bienestar que lo necesita para hablarle de una estrategia.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q72b" name="question72" value="B">
+            <label for="q72b">B. se comunica con el jefe inmediato y le refiere que un funcionario lo necesita con prioridad, por lo cual le transfiere para que le atienda oportunamente.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q72c" name="question72" value="C">
+            <label for="q72c">C. llama al jefe de departamento, le comenta que el funcionario de bienestar requiere de una autorización urgente para comunicárselo y que ellos definan la situación.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback72" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: llama al jefe de departamento, le comenta que el funcionario de bienestar requiere de una autorización urgente para comunicárselo y que ellos definan la situación.
+    </div>
+</div>
+
+<div id="question-73" class="question-container">
+    <div class="question-number">Pregunta 73</div>
+    <div class="question-text">Usted es funcionario en el departamento de contratación, es el encargado de contactar para las entrevistas y las firmas de contrato a los candidatos del departamento de selección varios cargos de importancia; es abordado por dos funcionarios quienes recomendaron a una persona para un cargo provisional, pues quieren saber si esa persona será contratada, sin embargo, aún no se ha tomado una decisión respecto a la persona que ocupará dicho cargo debido a la competencia que hay entre los candidatos. En este caso, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q73a" name="question73" value="A">
+            <label for="q73a">A. responde que aún no tiene la información acerca de la persona que será contratada, pero comenta que la persona a la que recomendaron tiene posibilidades en el proceso.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q73b" name="question73" value="B">
+            <label for="q73b">B. informa a los funcionarios que el proceso de selección es un proceso demorado, por lo cual aún no conoce si la persona a quienes recomendaron será seleccionada para el cargo.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q73c" name="question73" value="C">
+            <label for="q73c">C. les explica el proceso de selección que se desarrolla, con el fin de aclararles en qué parte del proceso se encuentra la persona a la que recomendaron.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback73" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: informa a los funcionarios que el proceso de selección es un proceso demorado, por lo cual aún no conoce si la persona a quienes recomendaron será seleccionada para el cargo.
+    </div>
+</div>
+
+<div id="question-74" class="question-container">
+    <div class="question-number">Pregunta 74</div>
+    <div class="question-text">Los funcionarios de un programa de visitas domiciliarias, deben captar la información de las visitas en los documentos y formatos estipulados, estos documentos tienen una hoja de firmas que debe estar firmada por el ciudadano visitado y el equipo de funcionarios, ya que si el documento no cuenta con la firma del ciudadano la visita no será válida para la entidad, por lo cual estos documentos son de suma importancia. Al regresar a la entidad, faltando poco tiempo para terminar la jornada laboral, los funcionarios le solicitan transcribir con prontitud la información de los documentos para poder hacer el análisis de la información siguiente. En este caso buscando cumplir con la actividad teniendo en cuenta la prioridad con la que se requiere la información, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q74a" name="question74" value="A">
+            <label for="q74a">A. lleva los documentos de la entidad a la casa, con el fin de transcribirlos en el tiempo estipulado así cumplir con la tarea establecida.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q74b" name="question74" value="B">
+            <label for="q74b">B. separa las hojas de la información captada de la hoja de firmas, posteriormente lleva la información a casa para hacer la transcripción, dejando las firmas en la entidad.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q74c" name="question74" value="C">
+            <label for="q74c">C. escanea los documentos en su totalidad para poder transcribirlos desde casa, de esa forma deja los documentos originales en la entidad y cumple con la tarea.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback74" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: escanea los documentos en su totalidad para poder transcribirlos desde casa, de esa forma deja los documentos originales en la entidad y cumple con la tarea.
+    </div>
+</div>
+
+<div id="question-75" class="question-container">
+    <div class="question-number">Pregunta 75</div>
+    <div class="question-text">Usted se encuentra realizando un reporte de las llegadas tarde y el cumplimiento de horarios de los miembros del departamento, para pasar la información a descargos de las planillas de ingreso físicas al computador y que estos tengan su respectivo llamado de atención; sin embargo, el líder de departamento le solicita asistir a reunión urgente fuera del departamento para que apoye con la organización de unas actividades de la entidad, para lo cual debe dejar todas sus actividades en pausa. Con el fin de asistir a la reunión teniendo en cuenta la actividad que realiza y el espacio de trabajo, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q75a" name="question75" value="A">
+            <label for="q75a">A. cierra los archivos del computador, posteriormente organiza la documentación procurando dejar un ambiente limpio.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q75b" name="question75" value="B">
+            <label for="q75b">B. alista una agenda y un bolígrafo para tomar apuntes de ser necesario, cierra los archivos de trabajo y asiste a la reunión.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q75c" name="question75" value="C">
+            <label for="q75c">C. guarda las planillas físicas en su escritorio después bloquea el computador, posteriormente asiste a la reunión.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback75" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: guarda las planillas físicas en su escritorio después bloquea el computador, posteriormente asiste a la reunión.
+    </div>
+</div>
+
+<div id="question-76" class="question-container">
+    <div class="question-number">Pregunta 76</div>
+    <div class="question-text">La entidad ha abierto una convocatoria para unas becas educativas que otorgará a los funcionarios con mejor desempeño, así como la aprobación de unas pruebas que incluyen ejecución escrita y una entrevista en la que usted estará presente con el fin de tomar los datos referentes acerca de su historia laboral y conocimiento en la temática a la cual se encaminan las becas, pues son necesarios para la transcripción de información al formulario de inscripción de la beca. Sin embargo, en el desarrollo de las entrevistas algunos funcionarios, además de hablar acerca de su historia laboral y conocimientos, comentan acerca de sus aspectos personales como familia y pasatiempos, aspecto que es permitido e indagado por el entrevistador. Con el fin de desarrollar adecuadamente la tarea, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q76a" name="question76" value="A">
+            <label for="q76a">A. se acerca respetuosamente a la entrevistadora para que le oriente sobre si es necesario tomar los datos adicionales que están aportando los entrevistados.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q76b" name="question76" value="B">
+            <label for="q76b">B. presta atención a la entrevista con el fin de tomar los datos que son de importancia para la transcripción, como fue estipulado en la ejecución de la tarea.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q76c" name="question76" value="C">
+            <label for="q76c">C. toma la información adicional por separado de la información solicitada, con el fin de proporcionarla al entrevistador una vez finalice la entrevista.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback76" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: presta atención a la entrevista con el fin de tomar los datos que son de importancia para la transcripción, como fue estipulado en la ejecución de la tarea.
+    </div>
+</div>
+
+<div id="question-77" class="question-container">
+    <div class="question-number">Pregunta 77</div>
+    <div class="question-text">Usted es el encargado de organizar la documentación del departamento para entregarla al área de archivo después de su utilización, siempre ha desarrollado dicha actividad según los protocolos de la entidad, sin embargo, al comunicarse con el departamento de archivo uno de los funcionarios del departamento le pide que lo haga con unos lineamientos diferentes ya que pretenden implementarlos el próximo semestre pues es más fácil para ellos realizar sus procesos de esa manera. En este caso, con el fin de entregar la documentación al área de archivo, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q77a" name="question77" value="A">
+            <label for="q77a">A. sigue los lineamientos indicados por el funcionario archivo, con el fin de facilitar sus tareas y cumplir oportunamente con las funciones que tiene establecidas.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q77b" name="question77" value="B">
+            <label for="q77b">B. le refiere al funcionario que una vez aprobados los nuevos lineamientos de entrega por la entidad, modificará el proceso de realización de la entrega.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q77c" name="question77" value="C">
+            <label for="q77c">C. dialoga con el funcionario de archivo para que este le explique la forma correcta de entregar los documentos con el fin de comprender el proceso de entrega.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback77" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: le refiere al funcionario que una vez aprobados los nuevos lineamientos de entrega por la entidad, modificará el proceso de realización de la entrega.
+    </div>
+</div>
+
+<div id="question-78" class="question-container">
+    <div class="question-number">Pregunta 78</div>
+    <div class="question-text">Usted junto con otro funcionario, han sido delegados para revisar unos archivos en búsqueda de comprobantes de pagos de unos materiales y artículos solicitados por el departamento de capacitación; posteriormente deben hacer una discriminación de los materiales más pedidos con sus respectivos valores, pues el costo ha incrementado más de un veinte por ciento en los últimos meses, por lo cual la entidad requiere hacer la revisión de dichas compras para verificar los motivos del incremento del costo. Dentro de los archivos se encuentran además la discriminación de la utilización de los artículos y la persona que reportó la utilización de estos; por lo que el compañero sugiere que deberían además hacer esa discriminación pues responde a la necesidad de información que tiene la entidad. Con el fin desarrollar la tarea solicitada en beneficio de la entidad, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q78a" name="question78" value="A">
+            <label for="q78a">A. le comenta al compañero que, no considera esa información que el refiere acerca la utilización sea adecuada para el alcance del objetivo que se les propuso, ya que la tarea estipulada implica centrarse solamente en los comprobantes de pago de los materiales.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q78b" name="question78" value="B">
+            <label for="q78b">B. define con el compañero para encargarse de la información de los comprobantes de pago, así él puede hacerse cargo de la información que encontró y presentarla cumpliendo tanto con la tarea propuesta como aportando a la entidad en el alcance de objetivos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q78c" name="question78" value="C">
+            <label for="q78c">C. dialoga con el compañero para distribuir el trabajo de forma que cada uno se encargue de una de las partes de la información, cubriendo así ambas informaciones, de esta forma pueden contribuir a la entidad con el objetivo.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback78" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: le comenta al compañero que, no considera esa información que el refiere acerca la utilización sea adecuada para el alcance del objetivo que se les propuso, ya que la tarea estipulada implica centrarse solamente en los comprobantes de pago de los materiales.
+    </div>
+</div>
+
+<div id="question-79" class="question-container">
+    <div class="question-number">Pregunta 79</div>
+    <div class="question-text">Usted como funcionario del área de correspondencia tiene la tarea de entregar la documentación y paquetes que le corresponde a cada uno de los funcionarios de la entidad, para posteriormente recoger los documentos que deben ser llevados al área de correspondencia, una vez iniciado el recorrido con los documentos a entregar, se encuentra con un líder de departamento que lo requiere con prioridad para entregarle otros documentos de tipo confidencial, a pesar de que debe recogerlo una vez haga las entregas pendientes, el líder es insistente con que el funcionario los reciba a pesar de la dificultad para recogerlos debido a la cantidad de paquetes que ya tiene. En este caso, con el fin de cumplir adecuadamente sus tareas, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q79a" name="question79" value="A">
+            <label for="q79a">A. le refiere al líder que realice la entrega de la documentación directamente en el departamento de correspondencia debido a la prioridad, pues hasta ahora inicia con la entrega del día.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q79b" name="question79" value="B">
+            <label for="q79b">B. dialoga con el líder para concretar una hora de recogida de la documentación, que se ajuste para ambos y sea posterior a la entrega de los paquetes, como está estipulado en sus funciones.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q79c" name="question79" value="C">
+            <label for="q79c">C. con ayuda del líder acomoda los documentos entre los paquetes de entrega con el fin de realizar la tarea de forma adecuada, para posteriormente realizar la radicación de los documentos.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback79" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: dialoga con el líder para concretar una hora de recogida de la documentación, que se ajuste para ambos y sea posterior a la entrega de los paquetes, como está estipulado en sus funciones.
+    </div>
+</div>
+
+<div id="question-80" class="question-container">
+    <div class="question-number">Pregunta 80</div>
+    <div class="question-text">En el departamento de recursos humanos se desarrolla una reunión confidencial en la que se determinarán los funcionarios a los que se les realizará terminación de contrato el siguiente mes, debido a la necesidad de recorte de personal que tiene la entidad. Al salir de la reunión su jefe le solicita prepare los documento correspondientes para cada funcionario seleccionado; posteriormente, recibe una llamada del departamento de gestión documental donde le preguntan si alguno de los funcionarios de ese departamento está dentro de las personas a las que se les hará la terminación de contrato, quieren saber si deben modificar su funcionamiento de acuerdo a la cantidad de personal que quede contratado. En este caso usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q80a" name="question80" value="A">
+            <label for="q80a">A. dialoga con el funcionario que lo llama explicándole que está imposibilitado para dar esa información, pues la entidad no le ha autorizado aún a divulgar los nombres de las personas seleccionadas.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q80b" name="question80" value="B">
+            <label for="q80b">B. refiere que todos los departamentos se verán afectados por el recorte de personal que se realizará, por lo que es de importancia que el departamento se reajuste al igual que los demás departamentos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q80c" name="question80" value="C">
+            <label for="q80c">C. comenta si hay funcionarios del departamento dentro de las personas seleccionadas para la terminación de contrato, sin embargo, no comenta los nombres de estos para no generar un entorno negativo.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback80" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: dialoga con el funcionario que lo llama explicándole que está imposibilitado para dar esa información, pues la entidad no le ha autorizado aún a divulgar los nombres de las personas seleccionadas.
+    </div>
+</div>
+<!-- fin -->
+<!-- inicio -->
+<div id="question-81" class="question-container">
+    <div class="question-number">Pregunta 81</div>
+    <div class="question-text">En el departamento de gestión documental en el que usted se desempeña, un funcionario del departamento diligenció de forma inadecuada un documento de soporte al préstamo de archivos físicos, lo cual se considera un error grave y todo el departamento fue advertido por el jefe con anterioridad acerca de este tipo de errores y las repercusiones que tendrían para todos en caso de ser presentados, pues afectan los objetivos de calidad del departamento. Por lo cual al identificar la falla en el documento buscando que el funcionario encargado corrija el error, evitando consecuencias en el departamento, usted decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q81a" name="question81" value="A">
+            <label for="q81a">A. recordarle al funcionario la meta de calidad de los documentos, posteriormente le refiere el error que cometió y señala que se debe corregir con prioridad.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q81b" name="question81" value="B">
+            <label for="q81b">B. comunicarse con el funcionario encargado y mencionarle que identificó un error en el documento para que este lo revise y lo corrija.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q81c" name="question81" value="C">
+            <label for="q81c">C. acercarse al funcionario encargado refiriéndole que cometió un error en el documento y le recuerda las medidas mencionadas por el jefe.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback81" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: comunicarse con el funcionario encargado y mencionarle que identificó un error en el documento para que este lo revise y lo corrija.
+    </div>
+</div>
+
+<div id="question-82" class="question-container">
+    <div class="question-number">Pregunta 82</div>
+    <div class="question-text">El supervisor del área de mantenimiento le solicita a un funcionario de su equipo de trabajo que le comunique al equipo acerca de la fecha de la reunión en la que pretende abordar las llegadas tarde de los miembros del equipo y el incumplimiento de las metas mensuales, además le menciona que tomará sanciones con las personas que han afectado al equipo debido a dichos retrasos, pues se encuentra muy molesto con la situación. Con el fin de procurar un ambiente laboral adecuado y transmitir la información dada por el superior, el funcionario debe</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q82a" name="question82" value="A">
+            <label for="q82a">A. comunicar a los miembros del equipo la fecha de la reunión programada por el superior refiriendo que es acerca del cumplimiento de metas mensuales del equipo.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q82b" name="question82" value="B">
+            <label for="q82b">B. notificar a cada uno de los compañeros del equipo de trabajo la fecha en que deben asistir a una reunión que ha convocado el supervisor de equipo quien está molesto.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q82c" name="question82" value="C">
+            <label for="q82c">C. dialogar con los miembros del equipo refiriendo la fecha de la reunión programada por el supervisor y mencionando que es de importancia para las medidas que este pretende tomar.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback82" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: A</span><br>
+        La respuesta correcta es: comunicar a los miembros del equipo la fecha de la reunión programada por el superior refiriendo que es acerca del cumplimiento de metas mensuales del equipo.
+    </div>
+</div>
+
+<div id="question-83" class="question-container">
+    <div class="question-number">Pregunta 83</div>
+    <div class="question-text">En la Unidad de Atención para las Víctimas, una madre cabeza de hogar con dos hijos menores de edad provenientes de una comunidad indígena, procura exponer una situación pero la auxiliar de servicio al cliente no comprende lo que dice, pues usa el lenguaje de su comunidad y esta solo habla español y el intérprete no se encuentra en ese instante. Ante esta situación la auxiliar decide,</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q83a" name="question83" value="A">
+            <label for="q83a">A. brindar atención a otra persona que sí hable español de modo que pueda realizar las gestiones correspondientes a alguien cuyo lenguaje comprenda.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q83b" name="question83" value="B">
+            <label for="q83b">B. hablar con los compañeros de trabajo presentes en la sección para delegar la tarea a quien considere que sí puede desarrollarla de manera oportuna.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q83c" name="question83" value="C">
+            <label for="q83c">C. usar señas y lenguaje corporal para indicar a la mujer que espere en tanto contacta al intérprete para así dar solución efectiva a sus requerimientos.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback83" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: usar señas y lenguaje corporal para indicar a la mujer que espere en tanto contacta al intérprete para así dar solución efectiva a sus requerimientos.
+    </div>
+</div>
+
+<div id="question-84" class="question-container">
+    <div class="question-number">Pregunta 84</div>
+    <div class="question-text">La entidad solicita cambios de los lugares de trabajo para la mayoría de funcionarios del departamento pues planea acercar a los líderes con los miembros del equipo de trabajo procurando mantener un entorno de supervisión en el cual se incrementen el alcance de las metas propuestas. Para desarrollar esos cambios le dan a usted la lista de funcionarios que deben cambiar de puesto de trabajo, con el fin de que les notifique y les informe al lugar que fueron reasignados. Varios de los funcionarios le preguntan las razones del cambio a lo cual usted responde que</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q84a" name="question84" value="A">
+            <label for="q84a">A. las modificaciones en la organización de los puestos fueron determinadas por la entidad para promover la supervisión de los líderes a cada miembro del equipo de trabajo.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q84b" name="question84" value="B">
+            <label for="q84b">B. los cambios dispuesto se deben a que la entidad pretende mantener el control sobre cada miembro de equipo de la entidad por lo que decide acercarlos a sus líderes.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q84c" name="question84" value="C">
+            <label for="q84c">C. los motivos para realizar los cambios se relacionan con la intención de la entidad de promover el alcance de las metas propuestas, por lo que apuntan a un bien mayor.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback84" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: los motivos para realizar los cambios se relacionan con la intención de la entidad de promover el alcance de las metas propuestas, por lo que apuntan a un bien mayor.
+    </div>
+</div>
+
+<div id="question-85" class="question-container">
+    <div class="question-number">Pregunta 85</div>
+    <div class="question-text">Al servicio de información al ciudadano en el que usted desarrolla sus funciones, se acerca un ciudadano perteneciente a la guardia indígena de una de las comunidades del municipio quien solicita información acerca de la forma de realizar un trámite relacionado con la entidad; para desarrollar dicho trámite es necesario que el ciudadano radique unos documentos impresos en formatos, que debe descargar de la página de la entidad, sin embargo, el usuario menciona que no tiene posibilidad de imprimir pues la comunidad a la que pertenece no permiten el uso de computadores y este no los maneja de forma correcta. Con el fin de brindarle una solución al ciudadano, usted</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q85a" name="question85" value="A">
+            <label for="q85a">A. lo envía al servicio de autogestión para que el funcionario encargado lo oriente para que pueda descargar los archivos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q85b" name="question85" value="B">
+            <label for="q85b">B. se comunica con el superior y le comenta la situación así este haga seguir al ciudadano y le imprima y explique los formatos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q85c" name="question85" value="C">
+            <label for="q85c">C. dialoga con el superior para que le permita imprimir los formatos, así puede entregarlos al ciudadano evitándole complicaciones.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback85" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: dialoga con el superior para que le permita imprimir los formatos, así puede entregarlos al ciudadano evitándole complicaciones.
+    </div>
+</div>
+
+<div id="question-86" class="question-container">
+    <div class="question-number">Pregunta 86</div>
+    <div class="question-text">En el departamento de correspondencia donde usted se desempeña como Secretario, un funcionario que está ausente cometió un error al recibir unos documentos de un ciudadano, por lo que la entidad no puede dar la respuesta que el primero espera; por tal razón el jefe de departamento refiere que es necesario que la entidad se ponga en contacto con el ciudadano para que este radique nuevamente los documentos y así poder brindarle respuesta a su solicitud, sin embargo, no le delega a nadie la tarea. Teniendo en cuenta la situación, usted considera más pertinente</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q86a" name="question86" value="A">
+            <label for="q86a">A. preguntar al jefe cuáles son los documentos que deben ser aportados por el ciudadano para que el equipo de trabajo tenga conocimiento y así definir quién contacta al ciudadano.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q86b" name="question86" value="B">
+            <label for="q86b">B. referirle al jefe que es necesario que el funcionario que cometió el error se contacte con el ciudadano para darle la información pues es su responsabilidad como miembro del equipo de trabajo ya que fue quien atendió al usuario.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q86c" name="question86" value="C">
+            <label for="q86c">C. solicitar información acerca de la documentación que debe ser entregada por el ciudadano y el plazo, con el fin de tener claridad en la información y así comunicarse con el ciudadano.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback86" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: solicitar información acerca de la documentación que debe ser entregada por el ciudadano y el plazo, con el fin de tener claridad en la información y así comunicarse con el ciudadano.
+    </div>
+</div>
+
+<div id="question-87" class="question-container">
+    <div class="question-number">Pregunta 87</div>
+    <div class="question-text">En un dispensario de medicamentos del Centro de Salud, un hombre con discapacidad visual presenta una orden de medicamentos que ha expirado hace algunos días, por tanto, el auxiliar de farmacia no puede cumplir con su requerimiento, sin embargo, el hombre demuestra a través de su documento de identidad y un tiquete de la terminal terrestre, que viene desde un pueblo lejano y exponiendo además que no cuenta con suficientes recursos económicos para regresar con una nueva orden y que tampoco cuenta con red de apoyo para la realización de la tarea. Ante la situación el auxiliar de farmacia decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q87a" name="question87" value="A">
+            <label for="q87a">A. direccionar la situación al jefe de área, exponiendo al hombre que la situación depende de la decisión que tome el jefe tras analizar su caso, por lo tanto, solicitarle que permanezca en la sala de espera hasta obtener respuesta.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q87b" name="question87" value="B">
+            <label for="q87b">B. contactar a un asesor del Centro de Salud apelando a la situación extraordinaria del hombre para generar una nueva orden con base en la historia clínica presentada por este, que demuestra la importancia del acceso al servicio por su condición de salud.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q87c" name="question87" value="C">
+            <label for="q87c">C. explicar al hombre que los protocolos técnicos y legales impiden que se haga la entrega del medicamento en esas condiciones, por lo que debe regresar con una nueva orden que sea vigente, para así poder cumplir con su requerimiento.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback87" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: contactar a un asesor del Centro de Salud apelando a la situación extraordinaria del hombre para generar una nueva orden con base en la historia clínica presentada por este, que demuestra la importancia del acceso al servicio por su condición de salud.
+    </div>
+</div>
+
+<div id="question-88" class="question-container">
+    <div class="question-number">Pregunta 88</div>
+    <div class="question-text">El jefe inmediato de un funcionario se encuentra molesto por los indicadores bajos que dicho funcionario ha presentado en el último mes debido a una incapacidad, pues los indicadores afectan al equipo de trabajo en general. Por tanto, lo llama a una retroalimentación en la que se centra en explicarle la importancia de desempeñar de forma adecuada sus funciones y cómo estas afectan el equipo de trabajo, también le solicita los soportes de la incapacidad y finalmente le da un ultimátum de cumplimiento de metas, de lo contrario el jefe hará el reporte correspondiente a la entidad. Por tanto, el funcionario se siente molesto y desmotivado. Estando en el espacio de retroalimentación con el fin de actuar de forma oportuna, el funcionario debe</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q88a" name="question88" value="A">
+            <label for="q88a">A. entregar los soportes de la incapacidad solicitada por el jefe aludiendo la influencia que esta tuvo en los indicadores negativos.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q88b" name="question88" value="B">
+            <label for="q88b">B. hacer la entrega de los soportes de la incapacidad solicitados por el jefe, además se compromete con la mejora de indicadores.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q88c" name="question88" value="C">
+            <label for="q88c">C. comprometerse al alcance de metas, aunque considera que la medida tomada no contempla la situación de la incapacidad.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback88" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: hacer la entrega de los soportes de la incapacidad solicitados por el jefe, además se compromete con la mejora de indicadores.
+    </div>
+</div>
+
+<div id="question-89" class="question-container">
+    <div class="question-number">Pregunta 89</div>
+    <div class="question-text">Una ciudadana se acerca al punto de información de servicio al ciudadano donde usted se desempeña, para indagar dónde puede radicar los documentos para una petición relacionada con una documentación, esta también pregunta acerca de los tiempos de respuesta de la entidad para dicho trámite. En el transcurso de atención otro ciudadano que se encuentra en la fila de espera comienza a gritar refiriendo que el tiempo de atención es muy demorado y que tiene afán de ser atendido, por lo cual la ciudadana se pone nerviosa y comienza a preguntarle acerca de los demás canales de atención donde puede obtener la información. En este caso teniendo en cuenta la situación de la ciudadana, usted decide</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q89a" name="question89" value="A">
+            <label for="q89a">A. mencionar cada uno de los canales de atención por los que puede obtener la información que desea, además le indica la forma de acceder a esta, con el fin de evitarle la incomodidad que siente y darle atención al ciudadano molesto.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q89b" name="question89" value="B">
+            <label for="q89b">B. referir al ciudadano molesto que usted debe realizar cada atención con el fin de cumplir las necesidades de todos los ciudadanos, por lo cual debe esperar; de esta manera tranquiliza a la ciudadana y puede darle la atención oportunamente.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q89c" name="question89" value="C">
+            <label for="q89c">C. brindar la información acerca del punto de radicación de documentos a la ciudadana, además le refiere que allí le informarán el tiempo de respuesta, posteriormente le entrega un folleto con todos los canales de atención de la entidad.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback89" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: C</span><br>
+        La respuesta correcta es: brindar la información acerca del punto de radicación de documentos a la ciudadana, además le refiere que allí le informarán el tiempo de respuesta, posteriormente le entrega un folleto con todos los canales de atención de la entidad.
+    </div>
+</div>
+
+<div id="question-90" class="question-container">
+    <div class="question-number">Pregunta 90</div>
+    <div class="question-text">Durante el último bimestre, al interior del equipo de trabajo de la dependencia de comunicaciones de una entidad, se han registrado algunas situaciones que han afectado el clima laboral, toda vez que se ha seccionado el equipo de trabajo en dos grupos que trabajan con metodologías opuestas. La auxiliar de comunicaciones es quien tiene más antigüedad en la dependencia y por tanto, muchos de sus compañeros acuden a ella pidiendo consejo sobre cómo llevar la situación de manera tranquila y sin que afecte el desempeño del área. Ante la situación, la auxiliar de comunicación decide,</div>
+    <div class="options">
+        <div class="option">
+            <input type="radio" id="q90a" name="question90" value="A">
+            <label for="q90a">A. aportar su opinión de manera general, permaneciendo neutral ante la problemática presentada y tratar de mediar para que las dos formas de trabajo convivan entre sí.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q90b" name="question90" value="B">
+            <label for="q90b">B. mostrar empatía a sus compañeros de modo que acojan sus consejos sobre cómo trabajar en equipo, pese a las diferencias y con base en su propia experiencia.</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="q90c" name="question90" value="C">
+            <label for="q90c">C. ofrecer su apoyo a quienes se acerquen a ella, sin embargo, manteniendo una distancia prudencial para no verse involucrada en una situación que realmente no le compete.</label>
+        </div>
+    </div>
+    <div class="feedback" id="feedback90" style="display: none;">
+        <span class="correct-answer">Respuesta correcta: B</span><br>
+        La respuesta correcta es: mostrar empatía a sus compañeros de modo que acojan sus consejos sobre cómo trabajar en equipo, pese a las diferencias y con base en su propia experiencia.
+    </div>
+</div>
+<!-- fin -->
+        <div class="navigation">
+            <button id="prev-btn" onclick="prevQuestion()" disabled>Anterior</button>
+            <button id="next-btn" onclick="nextQuestion()">Siguiente</button>
+            <button id="submit-btn" onclick="showResults()" style="display: none;">Ver Resultados</button>
+        </div>
+        
+        <div id="results" class="results">
+            <div class="score" id="score"></div>
+            <div id="results-details"></div>
+            <button onclick="resetQuiz()">Realizar Otra Vez</button>
+        </div>
+    </div>
+
+    <script>
+       const correctAnswers = {
+    'question1': 'B',
+    'question2': 'A',
+    'question3': 'B',
+    'question4': 'A',
+    'question5': 'A',
+    'question6': 'C',
+    'question7': 'C',
+    'question8': 'A',
+    'question9': 'B',
+    'question10': 'A',
+    'question11': 'B',
+    'question12': 'A',
+    'question13': 'A',
+    'question14': 'B',
+    'question15': 'A',
+    'question16': 'C',
+    'question17': 'A',
+    'question18': 'A',
+    'question19': 'A',
+    'question20': 'A'
+    'question21': 'B',
+    'question22': 'A',
+    'question23': 'A',
+    'question24': 'B',
+    'question25': 'A',
+    'question26': 'C',
+    'question27': 'C',
+    'question28': 'A',
+    'question29': 'A',
+    'question30': 'A',
+    'question31': 'B',
+    'question32': 'A',
+    'question33': 'B',
+    'question34': 'A',
+    'question35': 'A',
+    'question36': 'C',
+    'question37': 'C',
+    'question38': 'A',
+    'question39': 'B',
+    'question40': 'A'
+    'question41': 'C',
+    'question42': 'C',
+    'question43': 'A',
+    'question44': 'B',
+    'question45': 'C',
+    'question46': 'B',
+    'question47': 'C',
+    'question48': 'B',
+    'question49': 'A',
+    'question50': 'B'
+    'question51': 'A',
+    'question52': 'B',
+    'question53': 'A',
+    'question54': 'C',
+    'question55': 'A',
+     'question54': 'C',
+    'question55': 'A',
+    'question56': 'B',
+    'question57': 'A',
+    'question58': 'C',
+    'question59': 'A',
+    'question60': 'B',
+    'question61': 'C',
+    'question62': 'A',
+    'question63': 'B',
+    'question64': 'B',
+    'question65': 'B',
+    'question66': 'A',
+    'question67': 'A',
+    'question68': 'A',
+    'question69': 'B',
+      'question70': 'B',
+    'question71': 'C',
+    'question72': 'C',
+    'question73': 'B',
+    'question74': 'C',
+    'question75': 'C',
+    'question76': 'B',
+    'question77': 'B',
+    'question78': 'A',
+    'question79': 'B',
+    'question80': 'A'
+    'question81': 'B',
+    'question82': 'A',
+    'question83': 'C',
+    'question84': 'C',
+    'question85': 'C',
+    'question86': 'C',
+    'question87': 'B',
+    'question88': 'B',
+    'question89': 'C',
+    'question90': 'B'
+};
+
+        let currentQuestion = 1;
+        const totalQuestions = 90;
+        
+        function updateNavigation() {
+            document.getElementById('prev-btn').disabled = currentQuestion === 1;
+            document.getElementById('next-btn').style.display = currentQuestion === totalQuestions ? 'none' : 'inline-block';
+            document.getElementById('submit-btn').style.display = currentQuestion === totalQuestions ? 'inline-block' : 'none';
+        }
+        
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                document.getElementById(`question-${currentQuestion}`).style.display = 'none';
+                currentQuestion++;
+                document.getElementById(`question-${currentQuestion}`).style.display = 'block';
+                updateNavigation();
+            }
+        }
+        
+        function prevQuestion() {
+            if (currentQuestion > 1) {
+                document.getElementById(`question-${currentQuestion}`).style.display = 'none';
+                currentQuestion--;
+                document.getElementById(`question-${currentQuestion}`).style.display = 'block';
+                updateNavigation();
+            }
+        }
+        
+        function showResults() {
+            let score = 0;
+            let resultsHTML = '';
+            
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="question${i}"]:checked`);
+                const isCorrect = selectedOption && selectedOption.value === correctAnswers[`question${i}`];
+                
+                if (isCorrect) {
+                    score++;
+                }
+                
+                // Mostrar retroalimentación para cada pregunta
+                document.getElementById(`feedback${i}`).style.display = 'block';
+                
+                // Resaltar la respuesta seleccionada y la correcta
+                if (selectedOption) {
+                    const optionLabel = selectedOption.parentElement;
+                    if (isCorrect) {
+                        optionLabel.classList.add('correct');
+                    } else {
+                        optionLabel.classList.add('incorrect');
+                    }
+                }
+                
+                // Resaltar la respuesta correcta
+                const correctOption = document.querySelector(`input[name="question${i}"][value="${correctAnswers[`question${i}`]}"]`);
+                if (correctOption) {
+                    correctOption.parentElement.classList.add('correct');
+                }
+            }
+            
+            document.getElementById('score').textContent = `Puntuación: ${score} de ${totalQuestions}`;
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('submit-btn').style.display = 'none';
+        }
+        
+        function resetQuiz() {
+            // Resetear todas las selecciones
+            const allInputs = document.querySelectorAll('input[type="radio"]');
+            allInputs.forEach(input => {
+                input.checked = false;
+                input.parentElement.classList.remove('correct', 'incorrect');
+            });
+            
+            // Ocultar todas las retroalimentaciones
+            for (let i = 1; i <= totalQuestions; i++) {
+                document.getElementById(`feedback${i}`).style.display = 'none';
+            }
+            
+            // Resetear a la primera pregunta
+            for (let i = 2; i <= totalQuestions; i++) {
+                document.getElementById(`question-${i}`).style.display = 'none';
+            }
+            document.getElementById(`question-1`).style.display = 'block';
+            
+            // Ocultar resultados
+            document.getElementById('results').style.display = 'none';
+            
+            // Resetear navegación
+            currentQuestion = 1;
+            updateNavigation();
+        }
+        
+        // Inicializar el cuestionario
+        window.onload = function() {
+            for (let i = 2; i <= totalQuestions; i++) {
+                document.getElementById(`question-${i}`).style.display = 'none';
+            }
+            updateNavigation();
+        };
+    </script>
+</body>
+</html>
